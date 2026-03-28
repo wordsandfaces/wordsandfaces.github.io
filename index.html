@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Слова И Лица</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════ LOADER ═══════════ -->
+  <div id="loader" class="loader">
+    <div class="loader__cinema">
+      <div class="loader__word loader__word--top">СЛОВА</div>
+      <div class="loader__and">И</div>
+      <div class="loader__word loader__word--bottom">ЛИЦА</div>
+      <div class="loader__line"></div>
+      <div class="loader__tagline">загружаем...</div>
+    </div>
+  </div>
+
+  <!-- ═══════════ HEADER ═══════════ -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#" class="logo">
+        <span class="logo__top">СЛОВА</span>
+        <span class="logo__and">И</span>
+        <span class="logo__bottom">ЛИЦА</span>
+      </a>
+
+      <button class="burger" id="burger" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="nav">
+        <a href="#faces">Лица</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ═══════════ HERO ═══════════ -->
+    <section class="hero" id="hero">
+      <div class="hero__bg">
+        <div class="hero__parallax-layer hero__parallax-layer--1" data-parallax="0.15"></div>
+        <div class="hero__parallax-layer hero__parallax-layer--2" data-parallax="0.08"></div>
+        <div class="hero__grain"></div>
+        <div class="hero__vignette"></div>
+      </div>
+
+      <div class="container hero__content">
+        <div class="hero__title-wrap">
+          <h1 class="hero__title">
+            <span class="hero__line hero__line--1">СЛОВА</span>
+            <span class="hero__line hero__line--and">И</span>
+            <span class="hero__line hero__line--2">ЛИЦА</span>
+          </h1>
+        </div>
+
+        <p class="hero__subtitle">
+          Актерское агентство для кино и сериалов
+        </p>
+
+
+      </div>
+    </section>
+
+    <!-- ═══════════ FACES ═══════════ -->
+    <section id="faces" class="section">
+      <div class="container">
+        <h2 class="section__title" data-animate="fade-up">Лица</h2>
+
+        <div class="filters" data-animate="fade-up">
+          <div class="filter-group filter-group--search">
+            <label for="searchFilter">Поиск</label>
+            <div class="search-box">
+              <input type="text" id="searchFilter" placeholder="Имя актера..." autocomplete="off" />
+              <div class="search-box__icon">⌕</div>
+            </div>
+          </div>
+
+          <div class="filter-group filter-group--age">
+            <label>Возраст</label>
+            <div class="range-box">
+              <div class="range-values">
+                <span class="range-tag">От: <strong id="ageMinValue">0</strong></span>
+                <span class="range-tag">До: <strong id="ageMaxValue">100</strong></span>
+              </div>
+              <div class="range-slider">
+                <div class="range-slider__track"></div>
+                <div class="range-slider__fill" id="rangeFill"></div>
+                <input type="range" id="ageMin" min="0" max="100" value="0" />
+                <input type="range" id="ageMax" min="0" max="100" value="100" />
+              </div>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <label for="cityFilter">Город</label>
+            <select id="cityFilter">
+              <option value="">Все города</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="genderFilter">Пол</label>
+            <select id="genderFilter">
+              <option value="">Любой</option>
+              <option value="мужской">Мужской</option>
+              <option value="женский">Женский</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="emptyState" class="empty-state hidden">
+          <div class="empty-state__icon">◌</div>
+          <div class="empty-state__text">Мы подбираем слова и ищем новые лица</div>
+        </div>
+
+        <div id="facesGrid" class="faces-grid"></div>
+      </div>
+    </section>
+
+    <!-- ═══════════ CONTACTS ═══════════ -->
+    <section id="contacts" class="section section--contacts">
+      <div class="container">
+        <h2 class="section__title" data-animate="fade-up">Контакты</h2>
+
+        <div class="contacts" data-animate="fade-up">
+          <div class="contacts__item">
+            <span class="contacts__label">Email</span>
+            <a href="mailto:wordsandfaces@yandex.ru">wordsandfaces@yandex.ru</a>
+          </div>
+          <div class="contacts__item">
+            <span class="contacts__label">Телефон</span>
+            <a href="tel:+79958907942">+7 (995) 890-79-42</a>
+          </div>
+          <div class="contacts__item">
+            <span class="contacts__label">Telegram</span>
+            <a href="https://t.me/wordsandfaces" target="_blank" rel="noopener">Слова и Лица</a>
+          </div>
+          <div class="contacts__item">
+            <span class="contacts__label">Адрес</span>
+            <span>Санкт-Петербург</span>
+          </div>
+        </div>
+
+        <div class="footer" data-animate="fade-up">
+          <span>© 2026 Слова И Лица</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══════════ MODAL SIMS 3 ═══════════ -->
+  <div id="modal" class="modal hidden">
+    <div class="modal__overlay" id="modalOverlay"></div>
+
+    <div class="modal__content sims">
+      <button class="modal__close" id="modalClose" aria-label="Закрыть">&times;</button>
+
+      <div class="sims__topbar">
+        <div class="sims__topbar-diamond"></div>
+        <div class="sims__topbar-title" id="modalName"></div>
+        <div class="sims__topbar-diamond"></div>
+      </div>
+
+      <div class="sims__body">
+        <div class="sims__left">
+          <div class="sims__portrait-frame">
+            <img id="modalMainPhoto" src="" alt="" class="sims__portrait" />
+            <div class="sims__portrait-glow"></div>
+          </div>
+          <div id="modalGallery" class="sims__gallery"></div>
+        </div>
+
+        <div class="sims__right">
+          <div class="sims__panel sims__panel--traits">
+            <div class="sims__panel-header">
+              <span class="sims__panel-icon">◆</span>
+              Характеристики
+            </div>
+            <div class="sims__stats" id="modalStats"></div>
+          </div>
+
+          <div class="sims__panel">
+            <div class="sims__panel-header">
+              <span class="sims__panel-icon">★</span>
+              Навыки
+            </div>
+            <div id="modalSkills" class="sims__tags"></div>
+          </div>
+
+          <div class="sims__panel">
+            <div class="sims__panel-header">
+              <span class="sims__panel-icon">◈</span>
+              Языки
+            </div>
+            <div id="modalLanguages" class="sims__tags"></div>
+          </div>
+
+          <div class="sims__panel">
+            <div class="sims__panel-header">
+              <span class="sims__panel-icon">▶</span>
+              Фильмография
+            </div>
+            <p id="modalFilmography" class="sims__text"></p>
+          </div>
+
+          <div class="sims__panel">
+            <div class="sims__panel-header">
+              <span class="sims__panel-icon">◎</span>
+              Театр
+            </div>
+            <p id="modalTheatre" class="sims__text"></p>
+          </div>
+
+          <div class="sims__panel">
+            <div class="sims__panel-header">
+              <span class="sims__panel-icon">▷</span>
+              Видеовизитка
+            </div>
+            <div id="modalVideo"></div>
+          </div>
+
+          <div class="sims__panel">
+            <div class="sims__panel-header">
+              <span class="sims__panel-icon">↗</span>
+              Filmtoolz
+            </div>
+            <a id="modalFilmtoolz" href="#" target="_blank" rel="noopener noreferrer" class="sims__link-btn">Открыть профиль</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ LIGHTBOX ═══════════ -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Закрыть">&times;</button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Назад">‹</button>
+    <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Вперед">›</button>
+    <img class="lightbox__img" id="lightboxImg" src="" alt="" />
+  </div>
+
+  <script src="faces.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
