@@ -1,23 +1,38 @@
 /* ═══════════ TOKENS ═══════════ */
 :root {
-  --bg: #0e0e0e;
-  --bg-2: #151515;
-  --panel: #1a1a1a;
-  --panel-2: #222;
-  --panel-3: #282828;
-  --text: #f3eee7;
-  --muted: #9e958c;
-  --accent: #8b3a4a;
-  --accent-light: #c4677a;
-  --accent-glow: rgba(196, 103, 122, 0.25);
-  --accent-soft: rgba(196, 103, 122, 0.12);
-  --border: rgba(255,255,255,0.07);
-  --border-2: rgba(255,255,255,0.12);
+  /* BASE */
+  --bg: rgb(68, 56, 66);
+  --bg-2: rgb(59, 49, 57);
+
+  /* PANELS — тёплый пурпурный подтон, согласован с фоном */
+  --panel: #1e1a1e;
+  --panel-2: #271f27;
+  --panel-3: #322931;
+
+  /* TEXT */
+  --text: rgb(238, 233, 203);
+  --muted: rgba(238, 233, 203, 0.8);
+
+  /* ACCENT */
+  --accent: rgb(199, 34, 33);
+  --accent-light: #d93d3c;
+  --accent-glow: rgba(68, 56, 66, 0.28);
+  --accent-soft: rgba(68, 56, 66, 0.12);
+
+  /* BORDERS */
+  --border: rgba(238, 233, 203, 0.10);
+  --border-2: rgba(238, 233, 203, 0.18);
+
+  /* UI */
   --radius: 20px;
   --radius-sm: 14px;
-  --shadow: 0 24px 64px rgba(0,0,0,0.4);
-  --font-display: "Cormorant Garamond", Georgia, serif;
-  --font-body: "Inter", Arial, sans-serif;
+  --shadow: 0 24px 64px rgba(0, 0, 0, 0.55);
+
+  /* FONTS */
+--font-display: "Unbounded", sans-serif;  /* жирные заголовки */
+--font-body: "Montserrat", sans-serif;     /* нейтральный текст */
+
+  /* MOTION */
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -57,7 +72,7 @@ body.no-scroll { overflow: hidden; }
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: #0a0a0a;
+  background: #100d10;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -133,7 +148,7 @@ body.no-scroll { overflow: hidden; }
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(14,14,14,0.75);
+  background: rgba(24, 18, 23, 0.80);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
   transform: translateY(-100%);
@@ -165,7 +180,7 @@ body.no-scroll { overflow: hidden; }
 .logo__and {
   font-style: italic;
   color: var(--accent-light);
-  font-size: 12px;
+  font-size: 18px;
 }
 
 .nav { display: flex; gap: 32px; }
@@ -239,7 +254,7 @@ body.no-scroll { overflow: hidden; }
 }
 
 .hero__parallax-layer--2 {
-  background: radial-gradient(ellipse at 70% 60%, rgba(196,103,122,0.08) 0%, transparent 50%);
+  background: radial-gradient(ellipse at 70% 60%, rgba(88, 56, 66, 0.18) 0%, transparent 50%);
   opacity: 0.6;
 }
 
@@ -254,7 +269,7 @@ body.no-scroll { overflow: hidden; }
 .hero__vignette {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.6) 100%);
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, 0.55) 100%);
 }
 
 .hero__content {
@@ -518,7 +533,7 @@ body.no-scroll { overflow: hidden; }
   color: var(--muted);
   border: 1px dashed var(--border-2);
   border-radius: var(--radius);
-  background: rgba(255,255,255,0.01);
+  background: rgba(238, 233, 203, 0.01);
 }
 
 .empty-state__icon {
@@ -567,7 +582,7 @@ body.no-scroll { overflow: hidden; }
 .face-card:hover {
   transform: translateY(-6px) scale(1.02);
   border-color: var(--accent);
-  box-shadow: 0 30px 60px rgba(0,0,0,0.5), 0 0 0 1px var(--accent);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px var(--accent);
 }
 
 .face-card__img-wrap {
@@ -579,7 +594,7 @@ body.no-scroll { overflow: hidden; }
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(0deg, rgba(14,14,14,0.6) 0%, transparent 50%);
+  background: linear-gradient(0deg, rgba(20, 14, 19, 0.65) 0%, transparent 50%);
   pointer-events: none;
 }
 
@@ -669,7 +684,7 @@ body.no-scroll { overflow: hidden; }
 .modal__overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.82);
+  background: rgba(10, 7, 10, 0.86);
   backdrop-filter: blur(12px);
 }
 
@@ -713,15 +728,15 @@ body.no-scroll { overflow: hidden; }
   border-color: var(--accent);
 }
 
-/* ═══════════ SIMS 3 CARD ═══════════ */
+/* ═══════════ SIMS CARD ═══════════ */
 .sims {
   border-radius: 24px;
-  background: linear-gradient(180deg, #1c1c20 0%, #14141a 100%);
+  background: linear-gradient(180deg, var(--panel-2) 0%, var(--panel) 100%);
   border: 1px solid var(--border-2);
   box-shadow:
-    0 0 0 1px rgba(196,103,122,0.08),
-    0 0 40px rgba(196,103,122,0.06),
-    0 40px 100px rgba(0,0,0,0.6);
+    0 0 0 1px rgba(199, 34, 33, 0.07),
+    0 0 40px rgba(199, 34, 33, 0.05),
+    0 40px 100px rgba(0, 0, 0, 0.6);
   padding: 0;
   opacity: 0;
   transform: scale(0.9) translateY(30px);
@@ -795,7 +810,7 @@ body.no-scroll { overflow: hidden; }
 .sims__portrait-glow {
   position: absolute;
   inset: 0;
-  background: linear-gradient(0deg, rgba(139,58,74,0.15) 0%, transparent 40%);
+  background: linear-gradient(0deg, rgba(199, 34, 33, 0.10) 0%, transparent 40%);
   pointer-events: none;
 }
 
@@ -829,7 +844,7 @@ body.no-scroll { overflow: hidden; }
 }
 
 .sims__panel {
-  background: rgba(255,255,255,0.025);
+  background: rgba(238, 233, 203, 0.025);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 20px;
@@ -852,7 +867,7 @@ body.no-scroll { overflow: hidden; }
 
 .sims__panel:hover {
   border-color: var(--border-2);
-  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
 }
 
 .sims__panel-header {
@@ -876,7 +891,7 @@ body.no-scroll { overflow: hidden; }
 }
 
 .stat-item {
-  background: rgba(255,255,255,0.03);
+  background: rgba(238, 233, 203, 0.03);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   padding: 14px 16px;
@@ -900,7 +915,7 @@ body.no-scroll { overflow: hidden; }
 
 .sims__tag {
   background: var(--accent-soft);
-  border: 1px solid rgba(196,103,122,0.2);
+  border: 1px solid rgba(199, 34, 33, 0.22);
   color: var(--accent-light);
   padding: 6px 14px;
   border-radius: 999px;
@@ -910,7 +925,7 @@ body.no-scroll { overflow: hidden; }
 }
 
 .sims__tag:hover {
-  background: rgba(196,103,122,0.2);
+  background: rgba(199, 34, 33, 0.22);
   border-color: var(--accent-light);
 }
 
@@ -949,7 +964,7 @@ body.no-scroll { overflow: hidden; }
   overflow: hidden;
   background: #000;
   border: 1px solid var(--border);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
 }
 
 .custom-player video {
@@ -969,7 +984,7 @@ body.no-scroll { overflow: hidden; }
   align-items: center;
   gap: 12px;
   padding: 12px 16px;
-  background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, transparent 100%);
+  background: linear-gradient(0deg, rgba(10, 7, 10, 0.88) 0%, transparent 100%);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -997,7 +1012,7 @@ body.no-scroll { overflow: hidden; }
 .custom-player__progress {
   flex: 1;
   height: 4px;
-  background: rgba(255,255,255,0.15);
+  background: rgba(238, 233, 203, 0.15);
   border-radius: 999px;
   cursor: pointer;
   position: relative;
@@ -1024,7 +1039,7 @@ body.no-scroll { overflow: hidden; }
 .custom-player__volume {
   width: 60px;
   height: 4px;
-  background: rgba(255,255,255,0.15);
+  background: rgba(238, 233, 203, 0.15);
   border-radius: 999px;
   cursor: pointer;
   position: relative;
@@ -1046,11 +1061,11 @@ body.no-scroll { overflow: hidden; }
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  background: rgba(0,0,0,0.3);
+  background: rgba(10, 7, 10, 0.32);
   transition: background 0.3s ease, opacity 0.3s ease;
 }
 
-.custom-player__big-play:hover { background: rgba(0,0,0,0.5); }
+.custom-player__big-play:hover { background: rgba(10, 7, 10, 0.52); }
 
 .custom-player__big-play.hidden-play {
   opacity: 0;
@@ -1140,9 +1155,7 @@ body.no-scroll { overflow: hidden; }
   transition: opacity 0.3s ease;
 }
 
-.custom-player.is-fullscreen:hover .custom-player__controls {
-  opacity: 1;
-}
+.custom-player.is-fullscreen:hover .custom-player__controls { opacity: 1; }
 
 .custom-player.is-fullscreen .custom-player__big-play {
   position: fixed;
@@ -1155,7 +1168,7 @@ body.no-scroll { overflow: hidden; }
   position: fixed;
   inset: 0;
   z-index: 9000;
-  background: rgba(0, 0, 0, 0.92);
+  background: rgba(10, 7, 10, 0.93);
   backdrop-filter: blur(16px);
   display: flex;
   align-items: center;
@@ -1176,7 +1189,7 @@ body.no-scroll { overflow: hidden; }
   max-height: 92vh;
   object-fit: contain;
   border-radius: 8px;
-  box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.55);
   transform: scale(0.92);
   transition: transform 0.4s var(--ease);
   user-select: none;
@@ -1191,9 +1204,9 @@ body.no-scroll { overflow: hidden; }
   right: 20px;
   width: 48px;
   height: 48px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid var(--border-2);
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(238, 233, 203, 0.07);
   color: var(--text);
   font-size: 26px;
   cursor: pointer;
@@ -1215,9 +1228,9 @@ body.no-scroll { overflow: hidden; }
   transform: translateY(-50%);
   width: 48px;
   height: 48px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid var(--border-2);
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(238, 233, 203, 0.07);
   color: var(--text);
   font-size: 22px;
   cursor: pointer;
