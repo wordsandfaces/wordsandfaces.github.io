@@ -15,6 +15,7 @@ const header = document.getElementById("header");
 const hero = document.getElementById("hero");
 const burger = document.getElementById("burger");
 const nav = document.getElementById("nav");
+const logoLink = document.getElementById("logoLink");
 
 const facesGrid = document.getElementById("facesGrid");
 const emptyState = document.getElementById("emptyState");
@@ -36,7 +37,7 @@ const modalMainPhoto = document.getElementById("modalMainPhoto");
 const modalGallery = document.getElementById("modalGallery");
 const modalName = document.getElementById("modalName");
 const modalStats = document.getElementById("modalStats");
-const modalSkills = document.getElementById("modalSkills");
+const modalVideo = document.getElementById("modalVideo");
 const modalFilmtoolz = document.getElementById("modalFilmtoolz");
 
 const lightbox = document.getElementById("lightbox");
@@ -72,6 +73,19 @@ function formatTime(sec) {
   const m = Math.floor(sec / 60);
   const s = Math.floor(sec % 60);
   return `${m}:${s.toString().padStart(2, "0")}`;
+}
+
+/* ═══════════ SCROLL TO SECTION ═══════════ */
+function scrollToSection(sectionId) {
+  const target = document.getElementById(sectionId);
+  if (target) {
+    const headerOffset = 80;
+    const elementPosition = target.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.scrollY - headerOffset;
+    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+    return true;
+  }
+  return false;
 }
 
 /* ═══════════ LOADER ═══════════ */
@@ -114,13 +128,22 @@ burger.addEventListener("click", () => {
   document.body.classList.toggle("no-scroll");
 });
 
-nav.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", () => {
+/* ═══════════ LOGO CLICK ═══════════ */
+if (logoLink) {
+  logoLink.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (modal && !modal.classList.contains("hidden")) {
+      closeModal();
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (window.location.hash) {
+      history.pushState(null, '', window.location.pathname + window.location.search);
+    }
     burger.classList.remove("active");
     nav.classList.remove("open");
     document.body.classList.remove("no-scroll");
   });
-});
+}
 
 /* ═══════════ SCROLL ANIMATIONS ═══════════ */
 function initScrollAnimations() {
@@ -200,9 +223,23 @@ function applyFilters() {
 }
 
 /* ═══════════ RENDER ═══════════ */
+function generateActorSlug(name) {
+  let slug = name
+    .toLowerCase()
+    .replace(/[^\w\sа-яё]/gi, '')
+    .replace(/\s+/g, '-')
+    .replace(/--+/g, '-')
+    .trim();
+  if (slug === 'faces' || slug === 'contacts' || slug === 'hero') {
+    slug = slug + '-actor';
+  }
+  return slug;
+}
+
 function createFaceCard(face) {
   const card = document.createElement("article");
   card.className = "face-card";
+  card.setAttribute("data-slug", generateActorSlug(face.name));
   card.innerHTML = `
     <div class="face-card__img-wrap">
       <img src="${face.photo || ""}" alt="${escapeHtml(face.name || "")}" loading="lazy" />
@@ -343,7 +380,6 @@ function createCustomPlayer(url) {
     }
   }
 
-  // Listen for native fullscreen exit (Escape etc.)
   document.addEventListener("fullscreenchange", () => {
     if (!document.fullscreenElement && wrapper.classList.contains("is-fullscreen")) {
       wrapper.classList.remove("is-fullscreen");
@@ -360,7 +396,6 @@ function createCustomPlayer(url) {
     }
   });
 
-  // Events
   bigPlay.addEventListener("click", togglePlay);
   playBtn.addEventListener("click", togglePlay);
   muteBtn.addEventListener("click", toggleMute);
@@ -376,27 +411,22 @@ function createCustomPlayer(url) {
   video.addEventListener("timeupdate", updateProgress);
   video.addEventListener("loadedmetadata", updateProgress);
 
-  // Progress seek
   let isSeeking = false;
   progressBar.addEventListener("mousedown", (e) => { isSeeking = true; seekVideo(e); });
   document.addEventListener("mousemove", (e) => { if (isSeeking) seekVideo(e); });
   document.addEventListener("mouseup", () => { isSeeking = false; });
 
-  // Volume drag
   let isVolumeDragging = false;
   volumeBar.addEventListener("mousedown", (e) => { isVolumeDragging = true; setVolume(e); });
   document.addEventListener("mousemove", (e) => { if (isVolumeDragging) setVolume(e); });
   document.addEventListener("mouseup", () => { isVolumeDragging = false; });
 
-  // Touch: progress
   progressBar.addEventListener("touchstart", (e) => { seekVideo(e.touches[0]); }, { passive: true });
   progressBar.addEventListener("touchmove", (e) => { seekVideo(e.touches[0]); }, { passive: true });
 
-  // Touch: volume
   volumeBar.addEventListener("touchstart", (e) => { setVolume(e.touches[0]); }, { passive: true });
   volumeBar.addEventListener("touchmove", (e) => { setVolume(e.touches[0]); }, { passive: true });
 
-  // Initial volume
   video.volume = 0.8;
   volumeFill.style.width = "80%";
 
@@ -439,23 +469,10 @@ function statItem(label, value) {
   `;
 }
 
-function renderTags(container, items, className) {
-  container.innerHTML = "";
-  const list = Array.isArray(items) ? items : (items ? [items] : []);
-  if (!list.length) {
-    container.innerHTML = `<span class="${className}">—</span>`;
-    return;
-  }
-  list.forEach(item => {
-    const tag = document.createElement("span");
-    tag.className = className;
-    tag.textContent = item;
-    container.appendChild(tag);
-  });
-}
-
 /* ═══════════ MODAL ═══════════ */
 function openModal(face) {
+  if (!face) return;
+  
   modalName.textContent = face.name || "";
   modalMainPhoto.src = face.photo || "";
   modalMainPhoto.alt = face.name || "";
@@ -469,13 +486,8 @@ function openModal(face) {
     ${statItem("Длина волос", face.hairLength)}
     ${statItem("Цвет глаз", face.eyeColor)}
     ${statItem("Телосложение", face.bodyType)}
-
-
   `;
 
-
-
-  // Collect all images for lightbox
   const allImages = [];
   if (face.photo) allImages.push(face.photo);
   if (Array.isArray(face.gallery)) {
@@ -484,13 +496,11 @@ function openModal(face) {
     });
   }
 
-  // Main photo click → lightbox
   modalMainPhoto.onclick = () => {
     const idx = allImages.indexOf(modalMainPhoto.src);
     openLightbox(allImages, idx !== -1 ? idx : 0);
   };
 
-  // Gallery
   modalGallery.innerHTML = "";
   if (Array.isArray(face.gallery) && face.gallery.length) {
     face.gallery.forEach(src => {
@@ -506,7 +516,6 @@ function openModal(face) {
     });
   }
 
-  // Video
   modalVideo.innerHTML = "";
   if (face.video) {
     if (isDirectVideo(face.video)) {
@@ -520,7 +529,6 @@ function openModal(face) {
     modalVideo.innerHTML = "<p class='sims__text'>—</p>";
   }
 
-  // Filmtoolz
   if (face.filmtoolz) {
     modalFilmtoolz.href = face.filmtoolz;
     modalFilmtoolz.classList.remove("disabled");
@@ -531,25 +539,88 @@ function openModal(face) {
 
   modal.classList.remove("hidden");
   document.body.classList.add("no-scroll");
+  
+  const slug = generateActorSlug(face.name);
+  if (window.location.hash !== `#${slug}`) {
+    history.pushState(null, '', `#${slug}`);
+  }
 }
 
 function closeModal() {
-  // Pause videos
   modal.querySelectorAll("video").forEach(v => { v.pause(); v.currentTime = 0; });
-  // Stop YouTube
   modal.querySelectorAll("iframe").forEach(iframe => { iframe.src = ""; });
-  // Exit fullscreen if active
   document.querySelectorAll(".custom-player.is-fullscreen").forEach(p => {
     p.classList.remove("is-fullscreen");
   });
-  // Close lightbox if open
   closeLightbox();
-
   modal.classList.add("hidden");
   document.body.classList.remove("no-scroll");
+  
+  // Очищаем хэш при закрытии модалки
+  if (window.location.hash) {
+    history.pushState(null, '', window.location.pathname + window.location.search);
+  }
 }
 
-/* ═══════════ LOAD ═══════════ */
+/* ═══════════ ANCHOR LINKS FOR ACTORS + SECTION NAVIGATION ═══════════ */
+function getDecodedHash() {
+  const hash = window.location.hash.slice(1);
+  try {
+    return decodeURIComponent(hash);
+  } catch (e) {
+    return hash;
+  }
+}
+
+function handleHashChange() {
+  const hash = getDecodedHash();
+  
+  if (!hash) return;
+  
+  const reservedHashes = ['faces', 'contacts', 'hero'];
+  
+  if (reservedHashes.includes(hash)) {
+    if (modal && !modal.classList.contains('hidden')) {
+      closeModal();
+    }
+    setTimeout(() => scrollToSection(hash), 100);
+  } else {
+    if (faces.length === 0) {
+      window.pendingHash = hash;
+      return;
+    }
+    const actor = faces.find(face => generateActorSlug(face.name) === hash);
+    if (actor) {
+      openModal(actor);
+    }
+  }
+}
+
+window.addEventListener('hashchange', handleHashChange);
+
+/* ═══════════ NAVIGATION LINKS HANDLER ═══════════ */
+nav.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", (e) => {
+    const href = link.getAttribute("href");
+    
+    if (href && href.startsWith("#")) {
+      e.preventDefault();
+      const targetId = href.slice(1);
+      
+      if (modal && !modal.classList.contains("hidden")) {
+        closeModal();
+      }
+      
+      burger.classList.remove("active");
+      nav.classList.remove("open");
+      document.body.classList.remove("no-scroll");
+      
+      setTimeout(() => scrollToSection(targetId), 50);
+    }
+  });
+});
+
+/* ═══════════ LOAD FACES ═══════════ */
 async function loadFaces() {
   try {
     const data = window.FACES_DATA;
@@ -566,6 +637,26 @@ async function loadFaces() {
     showEmptyState();
   } finally {
     await hideLoaderWithMinTime();
+    
+    if (window.pendingHash) {
+      const slug = window.pendingHash;
+      delete window.pendingHash;
+      const actor = faces.find(face => generateActorSlug(face.name) === slug);
+      if (actor) {
+        openModal(actor);
+      }
+    }
+    
+    const currentHash = getDecodedHash();
+    if (currentHash) {
+      const reservedHashes = ['faces', 'contacts', 'hero'];
+      if (!reservedHashes.includes(currentHash)) {
+        const actor = faces.find(face => generateActorSlug(face.name) === currentHash);
+        if (actor) {
+          openModal(actor);
+        }
+      }
+    }
   }
 }
 
@@ -581,7 +672,6 @@ modalOverlay.addEventListener("click", closeModal);
 
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
-    // Priority: fullscreen → lightbox → modal
     const fsPlayer = document.querySelector(".custom-player.is-fullscreen");
     if (fsPlayer) {
       fsPlayer.classList.remove("is-fullscreen");

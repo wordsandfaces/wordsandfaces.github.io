@@ -357,6 +357,101 @@ body.no-scroll { overflow: hidden; }
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* ═══════════ HERO BUTTON ═══════════ */
+.hero__button {
+  margin-top: 32px;
+  opacity: 0;
+}
+
+.hero.animate .hero__button {
+  animation: fadeUp 0.8s var(--ease) 0.9s forwards;
+}
+
+.btn-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--accent);
+  border: 1px solid var(--accent-light);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: 60px;
+  transition: all 0.3s var(--ease);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 0 20px rgba(199, 34, 33, 0.3);
+}
+
+.btn-download:hover {
+  background: transparent;
+  border-color: var(--accent-light);
+  transform: translateY(-3px);
+  box-shadow: 0 0 30px rgba(199, 34, 33, 0.5);
+}
+
+.btn-download__icon {
+  font-size: 18px;
+  transition: transform 0.2s ease;
+}
+
+.btn-download:hover .btn-download__icon {
+  transform: translateY(2px);
+}
+
+/* ═══════════ УМЕНЬШЕНИЕ ЗАГОЛОВКА НА ДЕСКТОПЕ ═══════════ */
+@media (min-width: 1200px) {
+  .hero__line--1,
+  .hero__line--2 {
+    font-size: clamp(48px, 8vw, 90px);
+    letter-spacing: 0.1em;
+  }
+  
+  .hero__line--and {
+    font-size: clamp(24px, 4vw, 38px);
+  }
+  
+  .hero__subtitle {
+    font-size: 14px;
+    letter-spacing: 0.1em;
+  }
+  
+  .hero__content {
+    padding: 60px 0;
+  }
+}
+
+/* Дополнительно для очень высоких экранов */
+@media (min-width: 1400px) and (min-height: 900px) {
+  .hero__line--1,
+  .hero__line--2 {
+    font-size: 100px;
+  }
+  
+  .hero__line--and {
+    font-size: 42px;
+  }
+  
+  .hero__subtitle {
+    font-size: 16px;
+  }
+}
+
+/* Для мобильных устройств */
+@media (max-width: 768px) {
+  .hero__button {
+    margin-top: 24px;
+  }
+  
+  .btn-download {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+}
+
 /* ═══════════ SECTIONS ═══════════ */
 .section { padding: 100px 0; }
 

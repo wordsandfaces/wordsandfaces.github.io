@@ -6,9 +6,14 @@
   <title>Слова И Лица</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+  
+  <!-- Open Graph для шаринга ссылок -->
+  <meta property="og:title" content="Слова И Лица — актёрское агентство">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wordsandfaces.ru/">
 </head>
 <body>
 
@@ -26,7 +31,7 @@
   <!-- ═══════════ HEADER ═══════════ -->
   <header class="header" id="header">
     <div class="container header__inner">
-      <a href="#" class="logo">
+      <a href="#" class="logo" id="logoLink">
         <span class="logo__top">СЛОВА</span>
         <span class="logo__and">И</span>
         <span class="logo__bottom">ЛИЦА</span>
@@ -66,7 +71,12 @@
           Актерское агентство важных слов и талантливых лиц
         </p>
 
-
+        <div class="hero__button">
+          <a href="Шахматка.pdf" download class="btn-download">
+            <span class="btn-download__icon">📄</span>
+            Скачать шахматку
+          </a>
+        </div>
       </div>
     </section>
 
@@ -148,7 +158,7 @@
             <span class="contacts__label">Адрес</span>
             <span>Москва/Санкт-Петербург</span>
           </div>
-    	  <div class="contacts__item">
+          <div class="contacts__item">
             <span class="contacts__label">PR-директор/SMM-директор</span>
             <a href="mailto:slovailitsa@yandex.ru">slovailitsa@yandex.ru<br>Юлия</a>
           </div>
@@ -192,7 +202,6 @@
             <div class="sims__stats" id="modalStats"></div>
           </div>
 
-   
           <div class="sims__panel">
             <div class="sims__panel-header">
               <span class="sims__panel-icon">▷</span>
