@@ -163,7 +163,7 @@ window.FACES_DATA = [
     gender: "женский",
     age: 27,
     city: "Москва",
-    photo: "https://trailers.filmtoolz.ru/images/photos_people/hq/1029495.jpg",
+    photo: "https://trailers.filmtoolz.ru/images/photos_people/hq/1150287.jpg",
     education: "ФШР",
     hairColor: "Шатен",
     hairLength: "Каре",
@@ -171,16 +171,17 @@ window.FACES_DATA = [
     height: 166,
     bodyType: "Среднее",
     gallery: [
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1029495.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1032980.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1029500.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1029499.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1029498.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1029497.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1029496.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1029491.jpg"
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1150287.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1150288.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1150293.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1150292.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1150295.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1150290.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1150291.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1150289.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1029497.jpg"
     ],
-    video: "https://prefs.filmtoolz.ru/files/u40154/video/2528879/2528879_hd720p.mp4",
+    video: "https://prefs.filmtoolz.ru/files/u40154/video/3215123/3215123_hd720p.mp4",
     filmtoolz: "https://casting.filmtoolz.ru/4057285/"
   },
  {
