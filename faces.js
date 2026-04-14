@@ -209,7 +209,7 @@ window.FACES_DATA = [
     gender: "женский",
     age: 27,
     city: "Москва",
-    photo: "https://trailers.filmtoolz.ru/images/photos_people/hq/1050027.jpg",
+    photo: "https://trailers.filmtoolz.ru/images/photos_people/hq/1156506.jpg",
     education: "ТИ им. Б. Щукина",
     hairColor: "Русый",
     hairLength: "Средние",
@@ -217,12 +217,12 @@ window.FACES_DATA = [
     height: 170,
     bodyType: "Стройное",
     gallery: [
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1050027.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1156506.jpg",
       "https://trailers.filmtoolz.ru/images/photos_people/hq/1050030.jpg",
       "https://trailers.filmtoolz.ru/images/photos_people/hq/1050029.jpg",
       "https://trailers.filmtoolz.ru/images/photos_people/hq/1050028.jpg"
     ],
-    video: "https://prefs.filmtoolz.ru/files/u33440/video/2632634/2632634_hd720p.mp4",
+    video: "https://prefs.filmtoolz.ru/files/u33440/video/3249639/3249639_hd720p.mp4",
     filmtoolz: "https://casting.filmtoolz.ru/3471497/"
   },
   {
@@ -319,6 +319,31 @@ window.FACES_DATA = [
     ],
     video: "https://prefs.filmtoolz.ru/files/u81988/video/2436296/2436296_hd720p.mp4",
     filmtoolz: "https://casting.filmtoolz.ru/4039962/"
+  },
+{
+    name: "Виктория Бриц",
+    gender: "женский",
+    age: 20,
+    city: "Москва",
+    photo: "https://trailers.filmtoolz.ru/images/photos_people/hq/1093651.jpg",
+    education: "МТК им. Л.А. Филатова",
+    hairColor: "Блондин",
+    hairLength: "Длинные",
+    eyeColor: "Голубой",
+    height: 173,
+    bodyType: "Стройное",
+    gallery: [
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1093651.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1093664.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1093663.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1093662.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1093661.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1093658.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1093657.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1093654.jpg"
+    ],
+    video: "https://prefs.filmtoolz.ru/files/u26848/video/2672883/2672883_hd720p.mp4",
+    filmtoolz: "https://casting.filmtoolz.ru/3937923/"
   },
 
   {
