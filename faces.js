@@ -46,27 +46,6 @@ window.FACES_DATA = [
     filmtoolz: "https://casting.filmtoolz.ru/3309938/"
   },
   {
-    name: "Анна Плаксина",
-    gender: "женский",
-    age: 23,
-    city: "Москва",
-    photo: "https://trailers.filmtoolz.ru/images/photos_people/hq/1151034.jpg",
-    education: "ТИ им. Б. Щукина",
-    hairColor: "Русый",
-    hairLength: "Короткие",
-    eyeColor: "Синий",
-    height: 185,
-    bodyType: "Стройное",
-    gallery: [
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1151034.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1110042.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1110037.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1110038.jpg"
-    ],
-    video: "https://prefs.filmtoolz.ru/files/u64334/video/1816060/1816060.mp4",
-    filmtoolz: "https://casting.filmtoolz.ru/3896607/"
-  },
-  {
     name: "Дарья Савичева",
     gender: "женский",
     age: 25,
@@ -90,6 +69,51 @@ window.FACES_DATA = [
     ],
     video: "https://prefs.filmtoolz.ru/files/u83185/video/3221773/3221773_hd720p.mp4",
     filmtoolz: "https://casting.filmtoolz.ru/3164042/"
+  },
+  {
+    name: "Мария Герасименко",
+    gender: "женский",
+    age: 28,
+    city: "Москва",
+    photo: "https://downloader.disk.yandex.ru/preview/eed39017a9ffa377e529f6abfb53225d44ae79f878f357cb3a24490d12e85f0c/69ecf88c/xqkNGWMuUO0Usa3icxKC0VboPEfyeabFt0FXSvVzU4HNIrzTIL-qhIFyjMHf2QPdTnSFcDiOLKpuE_GW0on8nw%3D%3D?uid=0&filename=DSC07759.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v3&size=1920x889",
+    education: "РГИСИ",
+    hairColor: "Шатен",
+    hairLength: "Средние",
+    eyeColor: "Серо-голубой",
+    height: 168,
+    bodyType: "Стройное",
+    gallery: [
+      "https://downloader.disk.yandex.ru/preview/eed39017a9ffa377e529f6abfb53225d44ae79f878f357cb3a24490d12e85f0c/69ecf88c/xqkNGWMuUO0Usa3icxKC0VboPEfyeabFt0FXSvVzU4HNIrzTIL-qhIFyjMHf2QPdTnSFcDiOLKpuE_GW0on8nw%3D%3D?uid=0&filename=DSC07759.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v3&size=1920x889",
+      "https://downloader.disk.yandex.ru/preview/44013c91bd84b5d488b6476f640667300986c370f3f0bc74127a1edc0e6a848d/69ecf88c/Y0iEJ4i-cL_aitbaHG_DbEwAVIbSVe2xXcTTbQQutIFEe61kA3UZCs1VQ1sPXEExwyQft7weLtBmzcnHgy90Bg%3D%3D?uid=0&filename=DSC07791.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v3&size=1920x889",
+      "https://downloader.disk.yandex.ru/preview/b1063f68adbab7f07a71feae49693aea057605707401c8c47fdd0bde0e4d892a/69ecf88c/43_LtcUTvu81Pbdkqg8BlEsSYSok2AGpDCYzUZBa1H69QgCi-HYaV9ilAp1N1_zFYWrsJoxekGUYMvzqqyquZQ%3D%3D?uid=0&filename=DSC07956.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v3&size=1920x889",
+"https://downloader.disk.yandex.ru/preview/e6883ac54996add0043b99fbaab1be9588ce4784fe98ead656b3d2347a596993/69ecf88c/Q5Wdhn0PrzrMIAXvtr1FyksSYSok2AGpDCYzUZBa1H66LKfQ1YbiK20wvNEkP3SJaEgaj-Sl_ZTnhDsAus-xiQ%3D%3D?uid=0&filename=DSC08013.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v3&size=1920x889",
+      "https://downloader.disk.yandex.ru/preview/84e038a7679c629e8a86ff6379758236975bdb7173ff7ba328bd4c34d8d1bcdc/69ecf88c/-dHucOsm86MBWPHK-86zKFboPEfyeabFt0FXSvVzU4FsXSi9gYPc-HRIHF2yMdNSu37Yn7V83feWyft6QlfClw%3D%3D?uid=0&filename=DSC07839.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v3&size=1920x889",
+      "https://downloader.disk.yandex.ru/preview/0ff33bf7a6d3a57d9aebebec1ef2383e716bde774fa0910cec705d7f3e4c56aa/69ecf88c/6tdStH_0YBF4Aq9WzMZkg1boPEfyeabFt0FXSvVzU4Gb6iqTl5fXjLhGiBxtR2h71ThqqX5kOTZRR-MnWjFhRw%3D%3D?uid=0&filename=DSC08113.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v3&size=1920x889",
+      "https://downloader.disk.yandex.ru/preview/894cf03824efd52e93d8ee8e8633e4d5fa031eace64da7ba50626b786a2a3e84/69ecf88c/NNzVOZhFukT8igmCudm1C3FDD8ZZ80PewVLhta8UFDFfs43jSOp1KHqJqx5KMXR2jH05GHIMniSmvgTDaXYHfQ%3D%3D?uid=0&filename=DSC07867.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v3&size=1920x889"
+    ],
+    video: "",
+    filmtoolz: "https://casting.filmtoolz.ru/3131568/"
+  },
+ {
+    name: "Анна Плаксина",
+    gender: "женский",
+    age: 23,
+    city: "Москва",
+    photo: "https://trailers.filmtoolz.ru/images/photos_people/hq/1151034.jpg",
+    education: "ТИ им. Б. Щукина",
+    hairColor: "Русый",
+    hairLength: "Короткие",
+    eyeColor: "Синий",
+    height: 185,
+    bodyType: "Стройное",
+    gallery: [
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1151034.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1110042.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1110037.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1110038.jpg"
+    ],
+    video: "https://prefs.filmtoolz.ru/files/u64334/video/1816060/1816060.mp4",
+    filmtoolz: "https://casting.filmtoolz.ru/3896607/"
   },
  {
     name: "Екатерина Орлова",
