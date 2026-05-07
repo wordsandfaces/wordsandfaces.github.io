@@ -436,13 +436,13 @@ window.FACES_DATA = [
   },
   {
     name: "Даня Кольцов (агент)",
-    photo: "Даня.jpg",
+    photo: "danya.JPG",
   noModal: true,
 telegram: "https://t.me/non_script"
   },
   {
     name: "Юлия Клейм (PR-директор)",
-    photo: "Юля.jpg",
+    photo: "julia.JPG",
   noModal: true,
 telegram: "https://t.me/the_bingewatcher"
   }
