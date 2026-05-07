@@ -244,9 +244,22 @@ function createFaceCard(face) {
     <div class="face-card__img-wrap">
       <img src="${face.photo || ""}" alt="${escapeHtml(face.name || "")}" loading="lazy" />
     </div>
-    <div class="face-card__name">${escapeHtml(face.name || "")}</div>
+    <div class="face-card__name">
+  ${escapeHtml(face.name || "")}
+  ${
+    face.telegram
+      ? `<a href="${face.telegram}" class="face-card__link" target="_blank">Telegram</a>`
+      : ""
+  }
+</div>
   `;
-  card.addEventListener("click", () => openModal(face));
+if (face.noModal) {
+  card.classList.add("face-card--team");
+}
+card.addEventListener("click", () => {
+  if (face.noModal) return;
+  openModal(face);
+});
   return card;
 }
 

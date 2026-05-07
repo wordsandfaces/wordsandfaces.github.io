@@ -1,5 +1,6 @@
 
 window.FACES_DATA = [
+
   {
     name: "Олег Луизо",
     gender: "мужской",
@@ -432,5 +433,17 @@ window.FACES_DATA = [
     ],
     video: "https://prefs.filmtoolz.ru/files/u55231/video/2030792/2030792_hd720p.mp4",
     filmtoolz: "https://casting.filmtoolz.ru/3955071/"
+  },
+  {
+    name: "Даня Кольцов (агент)",
+    photo: "Даня.jpg",
+  noModal: true,
+telegram: "https://t.me/non_script"
+  },
+  {
+    name: "Юлия Клейм (PR-директор)",
+    photo: "Юля.jpg",
+  noModal: true,
+telegram: "https://t.me/the_bingewatcher"
   }
 ];
