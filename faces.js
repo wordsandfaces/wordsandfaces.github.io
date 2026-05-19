@@ -141,6 +141,50 @@ window.FACES_DATA = [
     filmtoolz: "https://casting.filmtoolz.ru/3484364/"
   },
  {
+    name: "Василиса Васенина",
+    gender: "женский",
+    age: 26,
+    city: "Москва",
+    photo: "https://trailers.filmtoolz.ru/images/photos_people/hq/1013206.jpg",
+    education: "ММУ",
+    hairColor: "Блондин",
+    hairLength: "Длинные",
+    eyeColor: "Зеленый",
+    height: 175,
+    bodyType: "Среднее",
+    gallery: [
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1013206.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1013216.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1013215.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1013214.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1013200.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1013207.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1013205.jpg"
+    ],
+    video: "https://prefs.filmtoolz.ru/files/u20637/video/2439810/2439810_hd720p.mp4",
+    filmtoolz: "https://casting.filmtoolz.ru/3431402/"
+  },
+ {
+    name: "Дарья Ворохобко",
+    gender: "женский",
+    age: 39,
+    city: "Москва",
+    photo: "https://downloader.disk.yandex.ru/preview/764ebe0a5959333c76975ac7da15f4c4cca756ebe553b4782f76de04b6f8ae7a/6a0d011c/WaRyDFikYDr9IxHljMExBZi23cajekxvjNKFKPsGWW2-3T4DXw4tXyoT027E1amrYT1XKosLxtIAX3C-yeIgrA%3D%3D?uid=0&filename=Rusin_0032.jpeg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v3&is_direct_zip_experiment=1&size=1920x958",
+    education: "Школа-студия МХАТ",
+    hairColor: "Шатен",
+    hairLength: "Длинные",
+    eyeColor: "Карий",
+    height: 176,
+    bodyType: "Стройное",
+    gallery: [
+      "https://downloader.disk.yandex.ru/preview/764ebe0a5959333c76975ac7da15f4c4cca756ebe553b4782f76de04b6f8ae7a/6a0d011c/WaRyDFikYDr9IxHljMExBZi23cajekxvjNKFKPsGWW2-3T4DXw4tXyoT027E1amrYT1XKosLxtIAX3C-yeIgrA%3D%3D?uid=0&filename=Rusin_0032.jpeg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v3&is_direct_zip_experiment=1&size=1920x958",
+      "https://downloader.disk.yandex.ru/preview/85933fda020c39ba5bc518f51024f3ec3778ad31068432898491b3e6e1e12787/6a0d011c/S72ze5KaeLRVDlzBPJ2jHgkFMzsv5cedZpZDhikrahl_kjmur0q34lMaIrfchuk2dY7oEzwDPvfrVzBtS9oayA%3D%3D?uid=0&filename=DSC00689.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v3&is_direct_zip_experiment=1&size=1920x958",
+      "https://downloader.disk.yandex.ru/preview/8ac5954f0e21a19a85a052a1a9e005282a3183e7c2a317243ec613be2abcf3af/6a0d011c/L_upW36YbrufOZmw1da7EmAftqsdGJiBjk5RriEQQtkSBNbnyKzBrdDjGJ5ab8yOvac_6_JfX9ZY4mFlWNQPHQ%3D%3D?uid=0&filename=IMG_8566.JPG&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v3&is_direct_zip_experiment=1&size=1920x958",
+    ],
+    video: "",
+    filmtoolz: "https://casting.filmtoolz.ru/3140885/"
+  },
+ {
     name: "Дана Халифе",
     gender: "женский",
     age: 22,
@@ -183,6 +227,27 @@ window.FACES_DATA = [
     ],
     video: "https://prefs.filmtoolz.ru/files/u11304/video/2547962/2547962_hd720p.mp4",
     filmtoolz: "https://casting.filmtoolz.ru/3141461/"
+  },
+  {
+    name: "Дмитрий Савельев",
+    gender: "мужской",
+    age: 68,
+    city: "Санкт-Петербург",
+    photo: "mit.jpg",
+    education: "ЛГУ",
+    hairColor: "",
+    hairLength: "",
+    eyeColor: "Серо-зеленый",
+    height: 187,
+    bodyType: "Среднее",
+    gallery: [
+      "mit.jpg",
+      "mit1.jpg",
+      "mit2.jpg",
+      "mit3.jpg"
+    ],
+    video: "",
+    filmtoolz: ""
   },
   {
     name: "Павел Федоров",
@@ -302,6 +367,30 @@ window.FACES_DATA = [
     filmtoolz: "https://casting.filmtoolz.ru/3132479/"
   },
   {
+    name: "Аркадий Макаров",
+    gender: "мужской",
+    age: 39,
+    city: "Уфа",
+    photo: "https://downloader.disk.yandex.ru/preview/9826f55a00235cd4becd6e323492953b9a4fe4c8a7c03ed7e3e42bcc00f0630f/6a0d02d7/uLy0Axlxv_NsOEWFmeFNd3ynpRFiQjHUZHOsej_ZhBPH1TzBdPyPuEej0AQxLXIvD8lpepy1BOUUSwoFIj-zSg%3D%3D?uid=0&filename=IMG_4963.JPG&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v3&is_direct_zip_experiment=1&size=1920x958",
+
+    hairColor: "Рыже-русые",
+    hairLength: "Короткие",
+    eyeColor: "Голубой",
+    height: 178,
+    bodyType: "Атлетичное",
+    gallery: [
+      "https://downloader.disk.yandex.ru/preview/3c83133fc64cd4195d90864c32870067dd42d1bf5e800a6af8b54ea6fdecacdf/6a0d02d7/s0oqgq8sySb2pAGHKhdAvxsAsUsJNmz8CSMNSf5yJYREPlzN3Rzpz_Y4q0LZr_7t96M4xTYChvy_KslbXP7RJA%3D%3D?uid=0&filename=IMG_4983.JPG&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v3&is_direct_zip_experiment=1&size=1920x958",
+      "https://downloader.disk.yandex.ru/preview/940e8e9e348c891a855d4e5c1bb1b1fd840af620a16525e83c7a477140c931e1/6a0d02d7/00n6LkaTUtuo23KHVl4aPhsAsUsJNmz8CSMNSf5yJYRM_2Ow3l2mifSCHwuh6o-uhrQSaexUki3MFN-nTlShJg%3D%3D?uid=0&filename=IMG_4984.JPG&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v3&is_direct_zip_experiment=1&size=1920x958",
+      "https://downloader.disk.yandex.ru/preview/e9fe47aa60b71661e664b78533e69ca194b98dae1f839fe33974ef76808ca2c6/6a0d02d7/VIOXWIISRHmkHQDzMLLaZOGT2UhMTZA3_oZ6SwRO_kU5X83i_5VkyPL0IeHIW2NmIT-jHmjyjbCX8aRA9UqyMg%3D%3D?uid=0&filename=IMG_4961.JPG&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v3&is_direct_zip_experiment=1&size=1920x958",
+      "https://downloader.disk.yandex.ru/preview/687c8eefa9f676414c8389851d52086a5785cdda6f8843792e5fcad914eda220/6a0d02d7/uBhLvD-GdXCRmuya9HwnQXynpRFiQjHUZHOsej_ZhBP9rmBUQwjbPCaYm1s9L-2vvI1px9GReWv7cvLWBWb7YQ%3D%3D?uid=0&filename=IMG_4982.JPG&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v3&is_direct_zip_experiment=1&size=1920x958",
+      "https://downloader.disk.yandex.ru/preview/9594ed5a94f7cf7cdfa177caca946bf7f637160fcd268d1ff9e27232eab27424/6a0d02d7/uBNcUTyV0bOKIYLBY9QwRxsAsUsJNmz8CSMNSf5yJYQ9kAxproNi-EDfddljd1Noz6hS3NpRJouNsNX66VRlZg%3D%3D?uid=0&filename=IMG_4978.JPG&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v3&is_direct_zip_experiment=1&size=1920x958",
+      "https://downloader.disk.yandex.ru/preview/63f5dfe3b0361472c29a48a468e85a7caf6de244e4456daf2a8b2d27102432d4/6a0d03bd/_OrPWpyckc62bO2otlIhu8f9zK2kTvZklfxlK1SCXG7Y7dHaUon1SRavduDjYCqVOb_Lqurb3GOVHhCTTcaGVA%3D%3D?uid=0&filename=IMG_5541.JPG&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v3&is_direct_zip_experiment=1&size=1920x958",
+      "https://downloader.disk.yandex.ru/preview/011fa601cf387fb3b39295d56409b79c09839808279e8cfcec9edec5716ade98/6a0d03bd/eEUTQ3xnMTrqBrJ8C8RE_gxeBGvVZEWkf9X6WxHZDR-ZVdLUuEtJNzZaXGCab2zd2PEKFFNoYBR_2-YYo63YIw%3D%3D?uid=0&filename=IMG_5532.JPG&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v3&is_direct_zip_experiment=1&size=1920x958",
+      "https://downloader.disk.yandex.ru/preview/784481bd3a1706d2b3e53995f3258b7fb7771eb22e6de7639d2ed35010856aa8/6a0d03bd/9PIUb8RH09t88VjM_gfvg6wVaJGmsoxsj5b8QuYsgNbKAnNcnPOzDffHcNRvzdMYbQt7h8M-1SCjIrH2447J1A%3D%3D?uid=0&filename=IMG_3346.JPG&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v3&is_direct_zip_experiment=1&size=1920x958"
+    ],
+    video: ""
+  },
+  {
     name: "Семен Моисеев",
     gender: "мужской",
     age: 26,
@@ -322,28 +411,6 @@ window.FACES_DATA = [
     ],
     video: "https://prefs.filmtoolz.ru/files/u62956/video/2577883/2577883_hd720p.mp4",
     filmtoolz: "https://casting.filmtoolz.ru/3341790/"
-  },
-{
-    name: "Александра Тамбовская",
-    gender: "женский",
-    age: 32,
-    city: "Москва",
-    photo: "https://trailers.filmtoolz.ru/images/photos_people/hq/1069483.jpg",
-    education: "ТИ им. Б. Щукина",
-    hairColor: "Блондин",
-    hairLength: "Длинные",
-    eyeColor: "Серо-голубой",
-    height: 165,
-    bodyType: "Стройное",
-    gallery: [
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1069483.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1012478.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1012484.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1012477.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1012476.jpg"
-    ],
-    video: "https://prefs.filmtoolz.ru/files/u81988/video/2436296/2436296_hd720p.mp4",
-    filmtoolz: "https://casting.filmtoolz.ru/4039962/"
   },
 {
     name: "Виктория Бриц",
@@ -434,6 +501,28 @@ window.FACES_DATA = [
     video: "https://prefs.filmtoolz.ru/files/u55231/video/2030792/2030792_hd720p.mp4",
     filmtoolz: "https://casting.filmtoolz.ru/3955071/"
   },
+{
+    name: "Александра Тамбовская",
+    gender: "женский",
+    age: 32,
+    city: "Москва",
+    photo: "https://trailers.filmtoolz.ru/images/photos_people/hq/1069483.jpg",
+    education: "ТИ им. Б. Щукина",
+    hairColor: "Блондин",
+    hairLength: "Длинные",
+    eyeColor: "Серо-голубой",
+    height: 165,
+    bodyType: "Стройное",
+    gallery: [
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1069483.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1012478.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1012484.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1012477.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1012476.jpg"
+    ],
+    video: "https://prefs.filmtoolz.ru/files/u81988/video/2436296/2436296_hd720p.mp4",
+    filmtoolz: "https://casting.filmtoolz.ru/4039962/"
+  },
   {
     name: "Даня Кольцов (агент)",
     photo: "danya.JPG",
@@ -441,7 +530,7 @@ window.FACES_DATA = [
 telegram: "https://t.me/non_script"
   },
   {
-    name: "Юлия Клейм (PR-директор)",
+    name: "Юлия Клейм (PR)",
     photo: "julia.JPG",
   noModal: true,
 telegram: "https://t.me/the_bingewatcher"
