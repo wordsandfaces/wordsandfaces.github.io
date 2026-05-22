@@ -169,7 +169,7 @@ window.FACES_DATA = [
     gender: "женский",
     age: 39,
     city: "Москва",
-    photo: "dar.jpeg",
+    photo: "https://trailers.filmtoolz.ru/images/photos_people/hq/1179424.jpg",
     education: "Школа-студия МХАТ",
     hairColor: "Шатен",
     hairLength: "Длинные",
@@ -177,11 +177,16 @@ window.FACES_DATA = [
     height: 176,
     bodyType: "Стройное",
     gallery: [
-      "dar.jpeg",
-      "dar1.jpg",
-      "dar2.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1179424.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1179423.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1179422.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1179420.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1179418.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1179417.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1179415.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1179414.jpg"
     ],
-    video: "",
+    video: "https://prefs.filmtoolz.ru/files/u16069/video/3377036/3377036_hd720p.mp4",
     filmtoolz: "https://casting.filmtoolz.ru/3140885/"
   },
  {
