@@ -236,7 +236,7 @@ window.FACES_DATA = [
   {
     name: "Дмитрий Савельев",
     gender: "мужской",
-    age: 68,
+    age: 58,
     city: "Санкт-Петербург",
     photo: "mit.jpg",
     education: "ЛГУ",
