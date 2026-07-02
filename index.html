@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Слова И Лица</title>
   <meta name="keywords" content="Актерское агентство, актеры кино, актеры сериалов, слова и лица" />
-  <meta name="description" content="Слова И Лица Актёрское Агентство важных слов и талантливых лиц" />
-  <meta name="robots" content="index, follow" />	
+  <meta name="description" content="Слова И Лица — Актёрское Агентство важных слов и талантливых лиц" />
+  <meta name="robots" content="index, follow" />
   <meta http-equiv="Content-Language" content="ru" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-  
-  <!-- Open Graph для шаринга ссылок -->
+
   <meta property="og:title" content="Слова И Лица">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://wordsandfaces.ru/">
@@ -41,59 +40,38 @@
         <span class="logo__bottom">ЛИЦА</span>
       </a>
 
-      <button class="burger" id="burger" aria-label="Меню">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="header__actions">
+        <a href="Шахматка.pdf" download class="btn-download btn-download--header">
+          <span class="btn-download__icon">▤</span>
+          <span class="btn-download__text">Шахматка</span>
+        </a>
 
-      <nav class="nav" id="nav">
-        <a href="#faces">Лица</a>
-        <a href="#contacts">Контакты</a>
-      </nav>
+        <button class="theme-toggle" id="themeToggle" aria-label="Сменить тему">
+          <span class="theme-toggle__icon theme-toggle__icon--sun">☀</span>
+          <span class="theme-toggle__icon theme-toggle__icon--moon">☾</span>
+        </button>
+      </div>
     </div>
   </header>
 
   <main>
-    <!-- ═══════════ HERO ═══════════ -->
-    <section class="hero" id="hero">
-      <div class="hero__bg">
-        <div class="hero__parallax-layer hero__parallax-layer--1" data-parallax="0.15"></div>
-        <div class="hero__parallax-layer hero__parallax-layer--2" data-parallax="0.08"></div>
-        <div class="hero__grain"></div>
-        <div class="hero__vignette"></div>
-      </div>
-
-      <div class="container hero__content">
-        <div class="hero__title-wrap">
-          <h1 class="hero__title">
-            <span class="hero__line hero__line--1">СЛОВА</span>
-            <span class="hero__line hero__line--and">И</span>
-            <span class="hero__line hero__line--2">ЛИЦА</span>
-          </h1>
-        </div>
-
-        <p class="hero__subtitle">
-          Актерское агентство важных слов и талантливых лиц
-        </p>
-
-        <div class="hero__button">
-          <a href="Шахматка.pdf" download class="btn-download">
-            <span class="btn-download__icon">📄</span>
-            Скачать шахматку
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════ FACES ═══════════ -->
-    <section id="faces" class="section">
+    <!-- ═══════════ FACES (теперь первый блок) ═══════════ -->
+    <section id="faces" class="section section--faces">
       <div class="container">
-        <h2 class="section__title" data-animate="fade-up">Лица</h2>
+        <div class="section__intro" data-animate="fade-up">
+          <h1 class="section__title section__title--main">
+            <span class="section__title-top">СЛОВА</span>
+            <span class="section__title-and">И</span>
+            <span class="section__title-bottom">ЛИЦА</span>
+          </h1>
+          <p class="section__subtitle">Актёрское агентство важных слов и талантливых лиц</p>
+        </div>
 
         <div class="filters" data-animate="fade-up">
           <div class="filter-group filter-group--search">
             <label for="searchFilter">Поиск</label>
             <div class="search-box">
-              <input type="text" id="searchFilter" placeholder="Имя актера..." autocomplete="off" />
+              <input type="text" id="searchFilter" placeholder="Имя актёра..." autocomplete="off" />
               <div class="search-box__icon">⌕</div>
             </div>
           </div>
@@ -129,7 +107,11 @@
               <option value="женский">Женский</option>
             </select>
           </div>
+
+          <button class="filters__reset" id="filtersReset" type="button">Сбросить</button>
         </div>
+
+        <div class="faces-meta" id="facesMeta" data-animate="fade-up"></div>
 
         <div id="emptyState" class="empty-state hidden">
           <div class="empty-state__icon">◌</div>
@@ -145,26 +127,51 @@
       <div class="container">
         <h2 class="section__title" data-animate="fade-up">Контакты</h2>
 
-        <div class="contacts" data-animate="fade-up">
-          <div class="contacts__item">
-            <span class="contacts__label">Email</span>
-            <a href="mailto:wordsandfaces@yandex.ru">wordsandfaces@yandex.ru</a>
+        <div class="contacts-list" data-animate="fade-up">
+          <div class="contacts-list__col">
+            <div class="contacts-row">
+              <span class="contacts-row__label">Email</span>
+              <a class="contacts-row__value" href="mailto:wordsandfaces@yandex.ru">wordsandfaces@yandex.ru</a>
+            </div>
+            <div class="contacts-row">
+              <span class="contacts-row__label">Телефон</span>
+              <a class="contacts-row__value" href="tel:+79958907942">+7 (995) 890-79-42</a>
+            </div>
+            <div class="contacts-row">
+              <span class="contacts-row__label">Telegram агентства</span>
+              <a class="contacts-row__value" href="https://t.me/wordsandfaces" target="_blank" rel="noopener">@wordsandfaces</a>
+            </div>
+            <div class="contacts-row">
+              <span class="contacts-row__label">Адрес</span>
+              <span class="contacts-row__value">Москва / Санкт-Петербург</span>
+            </div>
           </div>
-          <div class="contacts__item">
-            <span class="contacts__label">Телефон</span>
-            <a href="tel:+79958907942">+7 (995) 890-79-42<br>Даня Кольцов (Агент)</a>
-          </div>
-          <div class="contacts__item">
-            <span class="contacts__label">Telegram Агентства</span>
-            <a href="https://t.me/wordsandfaces" target="_blank" rel="noopener">Слова и Лица</a>
-          </div>
-          <div class="contacts__item">
-            <span class="contacts__label">Адрес</span>
-            <span>Москва/Санкт-Петербург</span>
-          </div>
-          <div class="contacts__item">
-            <span class="contacts__label">PR-директор/SMM</span>
-            <a href="mailto:slovailitsa@yandex.ru">slovailitsa@yandex.ru<br>Юлия</a>
+
+          <div class="contacts-list__col">
+            <div class="team-title">Команда</div>
+            <div class="team-people">
+              <a class="team-person" href="https://t.me/non_script" target="_blank" rel="noopener">
+                <div class="team-person__avatar">
+                  <img src="danya.JPG" alt="Даня Кольцов" loading="lazy" />
+                </div>
+                <div class="team-person__info">
+                  <span class="team-person__name">Даня Кольцов</span>
+                  <span class="team-person__role">Агент</span>
+                  <span class="team-person__tg">@non_script ↗</span>
+                </div>
+              </a>
+
+              <a class="team-person" href="https://t.me/the_bingewatcher" target="_blank" rel="noopener">
+                <div class="team-person__avatar">
+                  <img src="julia.JPG" alt="Юлия Клейм" loading="lazy" />
+                </div>
+                <div class="team-person__info">
+                  <span class="team-person__name">Юлия Клейм</span>
+                  <span class="team-person__role">PR-директор / SMM</span>
+                  <span class="team-person__tg">@the_bingewatcher ↗</span>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
 
@@ -175,7 +182,7 @@
     </section>
   </main>
 
-  <!-- ═══════════ MODAL SIMS 3 ═══════════ -->
+  <!-- ═══════════ MODAL ═══════════ -->
   <div id="modal" class="modal hidden">
     <div class="modal__overlay" id="modalOverlay"></div>
 
