@@ -244,24 +244,100 @@ body {
   .profile__qr { align-self: center; }
 }
 
-/* ═══════════ ПЕЧАТЬ (PDF) ═══════════ */
+/* ═══════════ Настройки печати ═══════════ */
 @media print {
-  @page { size: A4; margin: 12mm; }
-  body { background: #fff; padding: 0; }
-  .no-print { display: none !important; }
-  .profile {
-    box-shadow: none;
-    page-break-inside: avoid;
-    grid-template-columns: 200px 1fr;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
+  @page {
+    size: A4 landscape;
+    margin: 0;
   }
-  .profile__photo { width: 200px; height: 260px; }
-  .profile__stats { grid-template-columns: 1fr 1fr; }
-  .profile__films { columns: 2; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    width: 100%;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  /* Скрываем всё лишнее */
+  #pdfBtn,
+  .toolbar,
+  #sheetCount,
+  header,
+  nav {
+    display: none !important;
+  }
+
+  /* Лист на всю ширину страницы */
+  #sheet {
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  /* ── ОБЛОЖКА: на весь лист, отдельная страница ── */
   .cover {
+    width: 100% !important;
+    max-width: none !important;
+    height: 210mm !important;          /* высота A4 landscape */
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    break-after: page;
     page-break-after: always;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .cover__contacts,
+  .cover__contacts a,
+  .cover__contacts a:link,
+  .cover__contacts a:visited {
+    color: #ffffff !important;
+    text-decoration: none !important;
+  }
+
+  /* ── КАРТОЧКИ: по 2 на страницу ── */
+  .profile {
+    width: 100% !important;
+    max-width: none !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    padding: 10mm !important;
+    height: 105mm !important;          /* ровно половина A4 landscape (210/2) */
+    overflow: hidden !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-bottom: 1px solid #e0e0e0 !important;
+    border-radius: 0 !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    /* по умолчанию разрыв не делаем */
+    break-before: auto;
+    page-break-before: auto;
+  }
+
+  /* Начало новой страницы — только помеченные карточки */
+  .profile--page-start {
+    break-before: page !important;
+    page-break-before: always !important;
+  }
+
+  /* КРОМЕ самой первой — она идёт сразу за обложкой */
+  .profile--first {
+    break-before: auto !important;
+    page-break-before: auto !important;
+  }
+
+  a {
+    text-decoration: none !important;
   }
 }

@@ -89,27 +89,6 @@ function renderFilms(face) {
   `;
 }
 
-/* ─────────── Ссылка на профайл + QR ─────────── */
-
-function renderLink(face) {
-  const url = face.filmtoolz || face.profile || face.profileUrl;
-  if (!url) return "";
-
-  const label = url.includes("disk.yandex")
-    ? "Открыть материалы на Яндекс.Диске →"
-    : "Открыть профайл →";
-
-  return `
-    <div class="profile__link">
-      <div class="profile__link-text">
-        <b>Профайл:</b>
-        <a href="${esc(url)}" target="_blank" rel="noopener">${esc(label)}</a>
-      </div>
-      <div class="profile__qr" data-url="${esc(url)}"></div>
-    </div>
-  `;
-}
-
 /* ─────────── Карточка актёра ─────────── */
 
 function renderProfile(face) {
@@ -124,7 +103,6 @@ function renderProfile(face) {
   return `
     <div class="profile">
       <img class="profile__photo" src="${esc(face.photo || "")}" alt="${esc(face.name || "")}"
-           crossorigin="anonymous"
            onerror="this.classList.add('profile__photo--empty');" />
       <div class="profile__body">
         <div class="profile__name">${esc(face.name || "")}</div>
@@ -140,7 +118,6 @@ function renderProfile(face) {
         </div>
         ${eduBlock}
         ${renderFilms(face)}
-        ${renderLink(face)}
       </div>
     </div>
   `;
@@ -168,56 +145,37 @@ function initSheet() {
 
   sheet.innerHTML = renderCover() + faces.map(renderProfile).join("");
 
-  // Генерация QR-кодов (если подключена библиотека qrcode.min.js)
-  sheet.querySelectorAll(".profile__qr").forEach(el => {
-    const url = el.getAttribute("data-url");
-    if (url && window.QRCode) {
-      try {
-        new QRCode(el, {
-          text: url,
-          width: 70,
-          height: 70,
-          colorDark: "#1a1a1a",
-          colorLight: "#ffffff",
-          correctLevel: QRCode.CorrectLevel.M,
-        });
-      } catch (err) {
-        console.warn("QR error:", err);
-      }
-    }
+  // ── Разбивка по 2 карточки на страницу ──
+  // Считаем ТОЛЬКО карточки (обложка не участвует в нумерации),
+  // поэтому пары больше не сбиваются.
+  const profiles = sheet.querySelectorAll(".profile");
+  profiles.forEach((p, i) => {
+    if (i % 2 === 0) p.classList.add("profile--page-start");
   });
 }
 
-/* ─────────── Экспорт в PDF ─────────── */
+/* ─────────── Печать / сохранение в PDF ─────────── */
 
-async function exportPDF() {
+async function printSheet() {
   const btn = document.getElementById("pdfBtn");
   const original = btn ? btn.textContent : "";
-  if (btn) { btn.disabled = true; btn.textContent = "Генерация PDF..."; }
+  if (btn) { btn.disabled = true; btn.textContent = "Подготовка..."; }
 
   try {
-    // ждём, пока все картинки догрузятся
+    // ждём, пока все фото догрузятся, чтобы они попали в печать
     const imgs = [...document.querySelectorAll("#sheet img")];
     await Promise.all(imgs.map(img => {
       if (img.complete) return Promise.resolve();
       return new Promise(res => { img.onload = res; img.onerror = res; });
     }));
 
-    await new Promise(r => setTimeout(r, 300));
+    await new Promise(r => setTimeout(r, 200));
 
-    const opt = {
-      margin:      [10, 10, 10, 10],
-      filename:    `Шахматка_Слова_И_Лица_${todayStr().replace(/\./g, "-")}.pdf`,
-      image:       { type: "jpeg", quality: 0.95 },
-      html2canvas: { scale: 2, useCORS: true, allowTaint: true, logging: false, backgroundColor: "#ffffff" },
-      jsPDF:       { unit: "mm", format: "a4", orientation: "landscape" },
-      pagebreak:   { mode: ["css", "legacy"], avoid: ".profile" },
-    };
-
-    await html2pdf().set(opt).from(document.getElementById("sheet")).save();
+    // открываем диалог печати браузера
+    window.print();
   } catch (err) {
-    console.error("Ошибка PDF:", err);
-    alert("Ошибка при создании PDF: " + err.message);
+    console.error("Ошибка печати:", err);
+    alert("Ошибка при подготовке к печати: " + err.message);
   } finally {
     if (btn) { btn.disabled = false; btn.textContent = original; }
   }
@@ -229,5 +187,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initSheet();
 
   const pdfBtn = document.getElementById("pdfBtn");
-  if (pdfBtn) pdfBtn.addEventListener("click", exportPDF);
+  if (pdfBtn) pdfBtn.addEventListener("click", printSheet);
 });
