@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Шахматка — Слова И Лица</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="sheet.css" />
+</head>
+<body>
+  <!-- Панель управления (не печатается) -->
+  <div class="toolbar no-print">
+    <div class="toolbar__title">Генератор шахматки</div>
+    <div class="toolbar__actions">
+      <span class="toolbar__count" id="sheetCount"></span>
+      <button id="printBtn" class="toolbar__btn">🖨 Сохранить в PDF</button>
+    </div>
+  </div>
+
+  <!-- Сюда рендерится шахматка -->
+  <div id="sheet" class="sheet"></div>
+
+  <script src="faces.js"></script>
+  <script src="sheet.js"></script>
+</body>
+</html>

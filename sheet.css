@@ -1,0 +1,207 @@
+/* ═══════════ БАЗА ═══════════ */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --gold: #d4af37;
+  --gold-soft: #e8c766;
+  --ink: #1a1a1a;
+  --gray: #666;
+  --line: #e0e0e0;
+  --bg: #f4f4f4;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  padding: 90px 20px 40px;
+}
+
+/* ═══════════ ПАНЕЛЬ УПРАВЛЕНИЯ ═══════════ */
+.toolbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 64px;
+  background: #111;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+.toolbar__title {
+  font-family: "Unbounded", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+.toolbar__actions { display: flex; align-items: center; gap: 20px; }
+.toolbar__count { color: var(--gold-soft); font-size: 14px; }
+.toolbar__btn {
+  background: var(--gold);
+  color: #111;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform .15s, background .15s;
+}
+.toolbar__btn:hover { background: var(--gold-soft); transform: translateY(-1px); }
+
+/* ═══════════ ЛИСТ ═══════════ */
+.sheet {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ═══════════ ОБЛОЖКА ═══════════ */
+.cover {
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+  color: #fff;
+  padding: 60px 40px;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 30px;
+  page-break-after: always;
+}
+.cover__logo {
+  font-family: "Unbounded", sans-serif;
+  line-height: 1.1;
+}
+.cover__top, .cover__bottom {
+  font-size: 52px;
+  font-weight: 700;
+  letter-spacing: 6px;
+}
+.cover__and {
+  font-size: 28px;
+  color: var(--gold);
+  font-style: italic;
+  margin: 6px 0;
+}
+.cover__line {
+  width: 80px; height: 3px;
+  background: var(--gold);
+  margin: 30px auto;
+}
+.cover__sub { font-size: 15px; color: #bbb; letter-spacing: 1px; }
+.cover__contacts {
+  margin-top: 40px;
+  font-size: 13px;
+  color: #ccc;
+  line-height: 2;
+}
+.cover__contacts a { color: var(--gold-soft); text-decoration: none; }
+.cover__date { margin-top: 24px; font-size: 12px; color: #888; }
+
+/* ═══════════ КАРТОЧКА АКТЁРА ═══════════ */
+.profile {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  border: 1px solid var(--line);
+  page-break-inside: avoid;
+}
+.profile__photo {
+  width: 200px;
+  height: 260px;
+  object-fit: cover;
+  background: #ddd;
+}
+.profile__body { padding: 20px 24px; }
+.profile__name {
+  font-family: "Unbounded", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.profile__gender {
+  display: inline-block;
+  font-size: 11px;
+  color: var(--gray);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+}
+.profile__stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 20px;
+  margin-bottom: 14px;
+}
+.profile__stat {
+  font-size: 13px;
+  display: flex;
+  gap: 6px;
+}
+.profile__stat b { color: var(--gray); font-weight: 500; min-width: 90px; }
+.profile__stat span { color: var(--ink); font-weight: 600; }
+.profile__edu {
+  font-size: 12px;
+  color: var(--gray);
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+.profile__edu b { color: var(--ink); }
+.profile__films-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--gold);
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+.profile__films {
+  list-style: none;
+  font-size: 12px;
+  line-height: 1.7;
+  color: #333;
+  columns: 2;
+  column-gap: 24px;
+}
+.profile__films li { break-inside: avoid; }
+.profile__films .year { color: var(--gold); font-weight: 600; margin-right: 6px; }
+
+/* ═══════════ ССЫЛКА НА ПРОФАЙЛ ═══════════ */
+.profile__link {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  font-size: 12px;
+  color: var(--gray);
+  word-break: break-all;
+}
+.profile__link b {
+  color: var(--ink);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 3px;
+}
+.profile__link a {
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 500;
+}
+.profile__link a:hover { text-decoration: underline; }
+
+/* ═══════════ ПЕЧАТЬ (PDF) ═══════════ */
+@media print {
+  @page { size: A4; margin: 12mm; }
+  body { background: #fff; padding: 0; }
+  .no-print { display: none !important; }
+  .profile { box-shadow: none; page-break-inside: avoid; }
+  .cover { page-break-after: always; }
+}

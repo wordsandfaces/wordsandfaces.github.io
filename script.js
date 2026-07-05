@@ -78,6 +78,41 @@ function formatTime(sec) {
   return `${m}:${s.toString().padStart(2, "0")}`;
 }
 
+/* ═══════════ AUTO-FIT CARD META (имя / город + возраст) ═══════════ */
+/* Логика: сначала пробуем уместить в 1 строку своим размером,
+   уменьшая шрифт; если даже на минимуме не влезает — остаётся 2 строки
+   (сработает -webkit-line-clamp: 2 в CSS). */
+function fitLine(meta, el, varName, max, min) {
+  if (!el) return;
+  let size = max;
+  meta.style.setProperty(varName, size + "px");
+  const lh = () => parseFloat(getComputedStyle(el).lineHeight) || size * 1.3;
+  while (size > min) {
+    const oneLine = el.scrollWidth <= el.clientWidth
+      && Math.round(el.scrollHeight / lh()) <= 1;
+    if (oneLine) break;
+    size -= 0.5;
+    meta.style.setProperty(varName, size + "px");
+  }
+}
+function fitCardMeta(meta) {
+  const name = meta.querySelector(".face-card__name");
+  const sub  = meta.querySelector(".face-card__sub");
+  // стартовые максимумы (совпадают с CSS-переменными)
+  const isSmall = window.matchMedia("(max-width: 560px)").matches;
+  fitLine(meta, name, "--name-fs", isSmall ? 13 : 15, 10);
+  fitLine(meta, sub,  "--sub-fs",  isSmall ? 11 : 12, 8);
+}
+function fitAllCards() {
+  document.querySelectorAll(".face-card__meta").forEach(fitCardMeta);
+}
+// пересчёт при изменении размера окна
+let _fitTimer;
+window.addEventListener("resize", () => {
+  clearTimeout(_fitTimer);
+  _fitTimer = setTimeout(fitAllCards, 150);
+});
+
 /* ═══════════ SCROLL TO SECTION ═══════════ */
 function scrollToSection(sectionId) {
   const target = document.getElementById(sectionId);
@@ -201,7 +236,7 @@ function transliterate(str) {
 /* ═══════════ RENDER ═══════════ */
 function generateActorSlug(name) {
   let slug = transliterate(String(name || ""))
-    .replace(/[^a-z0-9\s-]/g, "") // оставляем только латиницу, цифры, пробелы и дефисы
+    .replace(/[^a-z0-9\s-]/g, "")
     .replace(/\s+/g, "-")
     .replace(/--+/g, "-")
     .replace(/^-+|-+$/g, "")
@@ -243,6 +278,8 @@ function renderFaces(data) {
   facesMeta.innerHTML = `Найдено: <strong>${data.length}</strong> из ${faces.length}`;
   data.forEach(face => facesGrid.appendChild(createFaceCard(face)));
   initCardAnimations();
+  // авто-подгонка размера имени/города после отрисовки
+  requestAnimationFrame(fitAllCards);
 }
 
 /* ═══════════ VIDEO HELPERS ═══════════ */
@@ -416,7 +453,6 @@ function buildStats(face) {
 }
 
 function openModal(face) {
-  // Обновляем URL: ?actor=имя-фамилия (slug берём из имени в модалке)
   const slug = generateActorSlug(face.name);
   history.replaceState(null, "", `?actor=${slug}`);
   document.title = `${face.name || ""} — Слова И Лица`;
@@ -425,10 +461,8 @@ function openModal(face) {
   modalMainPhoto.src = face.photo || "";
   modalMainPhoto.alt = face.name || "";
 
-  // Stats
   modalStats.innerHTML = buildStats(face);
 
-  // Gallery
   modalGallery.innerHTML = "";
   const gallery = (face.gallery && face.gallery.length) ? face.gallery : (face.photo ? [face.photo] : []);
   gallery.forEach((src, i) => {
@@ -445,7 +479,6 @@ function openModal(face) {
     openLightbox(gallery, idx >= 0 ? idx : 0);
   };
 
-  // Video
   modalVideo.innerHTML = "";
   if (isDirectVideo(face.video)) {
     modalVideo.appendChild(createCustomPlayer(face.video));
@@ -455,7 +488,6 @@ function openModal(face) {
     modalVideo.innerHTML = `<p class="sims__text">Видеовизитка появится позже</p>`;
   }
 
-  // Filmtoolz / link
   if (face.filmtoolz) {
     modalFilmtoolz.href = face.filmtoolz;
     modalFilmtoolz.classList.remove("disabled");
@@ -467,11 +499,9 @@ function openModal(face) {
     modalFilmtoolz.textContent = "Ссылка отсутствует";
   }
 
-  // Show modal
   modal.classList.remove("hidden");
   document.body.classList.add("no-scroll");
 
-  // Restart animation
   const simsCard = modal.querySelector(".sims");
   simsCard.style.animation = "none";
   void simsCard.offsetWidth;
@@ -534,7 +564,6 @@ function initAgeRange() {
   ageMax.min = minAge; ageMax.max = maxAge; ageMax.value = maxAge;
   ageMinValue.textContent = minAge;
   ageMaxValue.textContent = maxAge;
-  // percent-based fill относительно диапазона
   updateAgeRangePercent();
 }
 function updateAgeRangePercent() {
@@ -546,7 +575,6 @@ function updateAgeRangePercent() {
   rangeFill.style.left = `${lo}%`;
   rangeFill.style.width = `${hi - lo}%`;
 }
-// пересчёт fill при движении с учётом min/max диапазона
 [ageMin, ageMax].forEach(el => el.addEventListener("input", updateAgeRangePercent));
 
 async function init() {
@@ -561,6 +589,13 @@ async function init() {
 
   await hideLoaderWithMinTime();
 
+  // повторная подгонка после появления шрифтов/лоадера
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(fitAllCards);
+  } else {
+    fitAllCards();
+  }
+
   // Открытие модалки по параметру ?actor= (глубокая ссылка)
   handleActorParamOnLoad();
 }
@@ -570,7 +605,7 @@ function handleActorParamOnLoad() {
   const params = new URLSearchParams(window.location.search);
   const slug = params.get("actor");
 
-  // Поддержка старых ссылок через #hash (переадресация на ?actor=)
+  // Поддержка старых ссылок через #hash
   if (!slug) {
     const hash = decodeURIComponent(window.location.hash.slice(1));
     if (hash === "faces" || hash === "contacts") {
@@ -588,7 +623,6 @@ function handleActorParamOnLoad() {
   if (face) {
     setTimeout(() => openModal(face), 400);
   } else {
-    // Некорректный slug — чистим URL
     history.replaceState(null, "", window.location.pathname);
   }
 }

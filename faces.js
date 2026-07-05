@@ -470,7 +470,7 @@ window.FACES_DATA = [
     gender: "мужской",
     age: 20,
     city: "Москва",
-    photo: "https://trailers.filmtoolz.ru/images/photos_people/hq/1055216.jpg",
+    photo: "https://trailers.filmtoolz.ru/images/photos_people/hq/1203722.jpg",
     education: "ВГИК",
     hairColor: "Шатен",
     hairLength: "Средние",
@@ -478,14 +478,13 @@ window.FACES_DATA = [
     height: 191,
     bodyType: "Атлетичное",
     gallery: [
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1055216.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1203722.jpg",
       "https://trailers.filmtoolz.ru/images/photos_people/hq/1055219.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1055217.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1203723.jpg",
       "https://trailers.filmtoolz.ru/images/photos_people/hq/1055215.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1055212.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1055211.jpg"
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1055214.jpg"
     ],
-    video: "https://prefs.filmtoolz.ru/files/u66822/video/3167750/3167750_hd720p.mp4",
+    video: "https://prefs.filmtoolz.ru/files/u66822/video/3517163/3517163_hd720p.mp4",
     filmtoolz: "https://casting.filmtoolz.ru/3848212/"
   },
   {
