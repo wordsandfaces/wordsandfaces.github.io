@@ -1,6 +1,5 @@
 /* ═══════════════════════════════════════════════════════
-   ГЕНЕРАТОР ШАХМАТКИ — "Слова И Лица"
-   Собирает PDF-шахматку из данных faces.js
+   ГЕНЕРАТОР ШАХМАТКИ — "Слова И Лица"  (версия для GitHub Pages)
    ═══════════════════════════════════════════════════════ */
 
 const AGENCY = {
@@ -59,11 +58,7 @@ function statRow(label, value) {
   return `<div class="profile__stat"><b>${esc(label)}</b><span>${esc(value)}</span></div>`;
 }
 
-/* ─────────── Фильмография ───────────
-   Поддерживает форматы:
-   1) [{ year, title, role }, ...]
-   2) ["2025 Склиф Юра", ...]
-   3) "многострочный\nтекст"                */
+/* ─────────── Фильмография ─────────── */
 
 function renderFilms(face) {
   const films = face.filmography || face.films;
@@ -129,7 +124,8 @@ function renderProfile(face) {
   return `
     <div class="profile">
       <img class="profile__photo" src="${esc(face.photo || "")}" alt="${esc(face.name || "")}"
-           onerror="this.classList.add('profile__photo--empty')" />
+           crossorigin="anonymous"
+           onerror="this.classList.add('profile__photo--empty');" />
       <div class="profile__body">
         <div class="profile__name">${esc(face.name || "")}</div>
         ${genderLabel ? `<span class="profile__gender">${genderLabel}</span>` : ""}
@@ -155,14 +151,20 @@ function renderProfile(face) {
 function initSheet() {
   const sheet = document.getElementById("sheet");
   const countEl = document.getElementById("sheetCount");
+  if (!sheet) return;
 
-  // Те же данные, что и на сайте; исключаем служебные карточки (noModal)
   const faces = (window.FACES_DATA || []).filter(f => f && !f.noModal && f.name);
-
-  // Сортировка по алфавиту (при желании закомментируй строку ниже)
   faces.sort((a, b) => (a.name || "").localeCompare(b.name || "", "ru"));
 
   if (countEl) countEl.textContent = `Актёров: ${faces.length}`;
+
+  if (!faces.length) {
+    sheet.innerHTML = renderCover() +
+      `<div style="text-align:center;padding:40px;color:#999;font-size:14px;">
+        Список актёров пуст. Проверьте, что файл faces.js подключён ДО sheet.js и содержит массив FACES_DATA.
+      </div>`;
+    return;
+  }
 
   sheet.innerHTML = renderCover() + faces.map(renderProfile).join("");
 
@@ -186,11 +188,46 @@ function initSheet() {
   });
 }
 
+/* ─────────── Экспорт в PDF ─────────── */
+
+async function exportPDF() {
+  const btn = document.getElementById("pdfBtn");
+  const original = btn ? btn.textContent : "";
+  if (btn) { btn.disabled = true; btn.textContent = "Генерация PDF..."; }
+
+  try {
+    // ждём, пока все картинки догрузятся
+    const imgs = [...document.querySelectorAll("#sheet img")];
+    await Promise.all(imgs.map(img => {
+      if (img.complete) return Promise.resolve();
+      return new Promise(res => { img.onload = res; img.onerror = res; });
+    }));
+
+    await new Promise(r => setTimeout(r, 300));
+
+    const opt = {
+      margin:      [10, 10, 10, 10],
+      filename:    `Шахматка_Слова_И_Лица_${todayStr().replace(/\./g, "-")}.pdf`,
+      image:       { type: "jpeg", quality: 0.95 },
+      html2canvas: { scale: 2, useCORS: true, allowTaint: true, logging: false, backgroundColor: "#ffffff" },
+      jsPDF:       { unit: "mm", format: "a4", orientation: "landscape" },
+      pagebreak:   { mode: ["css", "legacy"], avoid: ".profile" },
+    };
+
+    await html2pdf().set(opt).from(document.getElementById("sheet")).save();
+  } catch (err) {
+    console.error("Ошибка PDF:", err);
+    alert("Ошибка при создании PDF: " + err.message);
+  } finally {
+    if (btn) { btn.disabled = false; btn.textContent = original; }
+  }
+}
+
 /* ─────────── События ─────────── */
 
 document.addEventListener("DOMContentLoaded", () => {
-  const printBtn = document.getElementById("printBtn");
-  if (printBtn) printBtn.addEventListener("click", () => window.print());
-
   initSheet();
+
+  const pdfBtn = document.getElementById("pdfBtn");
+  if (pdfBtn) pdfBtn.addEventListener("click", exportPDF);
 });

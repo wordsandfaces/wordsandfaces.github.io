@@ -4,10 +4,37 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Шахматка — Слова И Лица</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="sheet.css" />
+
+  <!-- Библиотека для генерации PDF (несколько зеркал на случай блокировки) -->
+  <script>
+    (function loadHtml2Pdf() {
+      var urls = [
+        "https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js",
+        "https://cdn.jsdelivr.net/npm/html2pdf.js@0.10.1/dist/html2pdf.bundle.min.js",
+        "https://unpkg.com/html2pdf.js@0.10.1/dist/html2pdf.bundle.min.js"
+      ];
+      var i = 0;
+      function tryLoad() {
+        if (i >= urls.length) {
+          console.warn("html2pdf не загрузился ни с одного источника");
+          window.__PDF_FAILED = true;
+          return;
+        }
+        var s = document.createElement("script");
+        s.src = urls[i];
+        s.onload = function () { console.log("html2pdf загружен:", urls[i]); };
+        s.onerror = function () { i++; tryLoad(); };
+        document.head.appendChild(s);
+      }
+      tryLoad();
+    })();
+  </script>
 </head>
 <body>
   <!-- Панель управления (не печатается) -->
@@ -15,7 +42,8 @@
     <div class="toolbar__title">Генератор шахматки</div>
     <div class="toolbar__actions">
       <span class="toolbar__count" id="sheetCount"></span>
-      <button id="printBtn" class="toolbar__btn">🖨 Сохранить в PDF</button>
+      <button id="pdfBtn" class="toolbar__btn">⬇ Скачать PDF</button>
+      <button id="printBtn" class="toolbar__btn toolbar__btn--secondary">🖨 Печать</button>
     </div>
   </div>
 
