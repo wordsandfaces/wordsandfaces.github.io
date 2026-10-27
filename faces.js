@@ -1,50 +1,28 @@
 
 window.FACES_DATA = [
-
   {
-    name: "Олег Луизо",
-    gender: "мужской",
-    age: 29,
+    name: "Мария Герасименко",
+    gender: "женский",
+    age: 28,
     city: "Москва",
-    photo: "https://trailers.filmtoolz.ru/images/photos_people/hq/1136424.jpg",
-    education: "ГИТИС",
+    photo: "https://trailers.filmtoolz.ru/images/photos_people/hq/1142280.jpg",
+    education: "РГИСИ",
     hairColor: "Шатен",
     hairLength: "Средние",
     eyeColor: "Серо-голубой",
-    height: 175,
+    height: 168,
     bodyType: "Стройное",
     gallery: [
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1136424.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1136425.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1097052.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1097051.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1097048.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1097054.jpg"
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1165642.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1142283.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1142281.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1142280.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1142275.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1142272.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1142271.jpg"
     ],
-    video: "https://prefs.filmtoolz.ru/files/u90119/video/2892044/2892044_hd720p.mp4",
-    filmtoolz: "https://casting.filmtoolz.ru/4134625/"
-  },
-  {
-    name: "Данила Гульков",
-    gender: "мужской",
-    age: 25,
-    city: "Москва",
-    photo: "https://trailers.filmtoolz.ru/images/photos_people/hq/1010929.jpg",
-    education: "ГИТИС",
-    hairColor: "Русый",
-    hairLength: "Средняя длина",
-    eyeColor: "Серо-голубой",
-    height: 180,
-    bodyType: "Стройное",
-    gallery: [
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1010929.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1049761.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1049760.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1010930.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1010931.jpg"
-    ],
-    video: "https://prefs.filmtoolz.ru/files/u50220/video/2628467/2628467_hd720p.mp4",
-    filmtoolz: "https://casting.filmtoolz.ru/3309938/"
+    video: "https://prefs.filmtoolz.ru/files/u80169/video/3300163/3300163_hd720p.mp4",
+    filmtoolz: "https://casting.filmtoolz.ru/3131568/"
   },
   {
     name: "Дарья Савичева",
@@ -72,28 +50,26 @@ window.FACES_DATA = [
     filmtoolz: "https://casting.filmtoolz.ru/3164042/"
   },
   {
-    name: "Мария Герасименко",
-    gender: "женский",
-    age: 28,
+    name: "Данила Гульков",
+    gender: "мужской",
+    age: 25,
     city: "Москва",
-    photo: "https://trailers.filmtoolz.ru/images/photos_people/hq/1142280.jpg",
-    education: "РГИСИ",
-    hairColor: "Шатен",
-    hairLength: "Средние",
+    photo: "https://trailers.filmtoolz.ru/images/photos_people/hq/1010929.jpg",
+    education: "ГИТИС",
+    hairColor: "Русый",
+    hairLength: "Средняя длина",
     eyeColor: "Серо-голубой",
-    height: 168,
+    height: 180,
     bodyType: "Стройное",
     gallery: [
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1165642.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1142283.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1142281.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1142280.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1142275.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1142272.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1142271.jpg"
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1010929.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1049761.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1049760.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1010930.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1010931.jpg"
     ],
-    video: "https://prefs.filmtoolz.ru/files/u80169/video/3300163/3300163_hd720p.mp4",
-    filmtoolz: "https://casting.filmtoolz.ru/3131568/"
+    video: "https://prefs.filmtoolz.ru/files/u50220/video/2628467/2628467_hd720p.mp4",
+    filmtoolz: "https://casting.filmtoolz.ru/3309938/"
   },
  {
     name: "Анна Плаксина",
@@ -115,30 +91,6 @@ window.FACES_DATA = [
     ],
     video: "https://prefs.filmtoolz.ru/files/u64334/video/1816060/1816060.mp4",
     filmtoolz: "https://casting.filmtoolz.ru/3896607/"
-  },
- {
-    name: "Екатерина Орлова",
-    gender: "женский",
-    age: 25,
-    city: "Москва",
-    photo: "https://trailers.filmtoolz.ru/images/photos_people/hq/932943.jpg",
-    education: "СПбГИК",
-    hairColor: "Блондин",
-    hairLength: "Средние",
-    eyeColor: "Зеленый",
-    height: 182,
-    bodyType: "Стройное",
-    gallery: [
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/932943.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/989425.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/932952.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/932954.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/932950.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/932945.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/932942.jpg"
-    ],
-    video: "https://prefs.filmtoolz.ru/files/u65767/video/2030072/2030072_hd720p.mp4",
-    filmtoolz: "https://casting.filmtoolz.ru/3484364/"
   },
  {
     name: "Василиса Васенина",
@@ -189,50 +141,6 @@ window.FACES_DATA = [
     video: "https://prefs.filmtoolz.ru/files/u16069/video/3377036/3377036_hd720p.mp4",
     filmtoolz: "https://casting.filmtoolz.ru/3140885/"
   },
- {
-    name: "Дана Халифе",
-    gender: "женский",
-    age: 22,
-    city: "Москва",
-    photo: "https://trailers.filmtoolz.ru/images/photos_people/hq/1139111.jpg",
-    education: "Московская школа кино",
-    hairColor: "Русый",
-    hairLength: "Длинные",
-    eyeColor: "Каре-зеленый",
-    height: 173,
-    bodyType: "Атлетичное",
-    gallery: [
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1139111.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1139117.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1139118.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1139119.jpg"
-    ],
-    video: "https://prefs.filmtoolz.ru/files/u88274/video/3163373/3163373_hd720p.mp4",
-    filmtoolz: "https://casting.filmtoolz.ru/4181008/"
-  },
-  {
-    name: "Артем Клименко",
-    gender: "мужской",
-    age: 33,
-    city: "Москва",
-    photo: "https://trailers.filmtoolz.ru/images/photos_people/hq/1032879.jpg",
-    education: "ВТУ им. М.С. Щепкина",
-    hairColor: "Русый",
-    hairLength: "Короткие",
-    eyeColor: "Зеленый",
-    height: 181,
-    bodyType: "Атлетичное",
-    gallery: [
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1032879.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1032882.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1032881.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1032880.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1032878.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1032877.jpg"
-    ],
-    video: "https://prefs.filmtoolz.ru/files/u11304/video/2547962/2547962_hd720p.mp4",
-    filmtoolz: "https://casting.filmtoolz.ru/3141461/"
-  },
   {
     name: "Дмитрий Савельев",
     gender: "мужской",
@@ -259,7 +167,7 @@ window.FACES_DATA = [
     gender: "мужской",
     age: 37,
     city: "Санкт-Петербург",
-    photo: "https://trailers.filmtoolz.ru/images/photos_people/hq/1082616.jpg",
+    photo: "https://trailers.filmtoolz.ru/images/photos_people/hq/1216124.jpg",
     education: "СПбГИК",
     hairColor: "Русый",
     hairLength: "Короткие",
@@ -267,14 +175,15 @@ window.FACES_DATA = [
     height: 178,
     bodyType: "Атлетичное",
     gallery: [
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1082614.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1082619.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1082618.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1082617.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1082616.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1082615.jpg"
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1216124.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1216126.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1216125.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1216123.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1216122.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1216121.jpg",
+      "https://trailers.filmtoolz.ru/images/photos_people/hq/1216120.jpg"
     ],
-    video: "https://prefs.filmtoolz.ru/files/u19691/video/2793061/2793061_hd720p.mp4",
+    video: "https://prefs.filmtoolz.ru/files/u19691/video/3593841/3593841_hd720p.mp4",
     filmtoolz: "https://casting.filmtoolz.ru/3163630/"
   },
   {
@@ -347,31 +256,6 @@ window.FACES_DATA = [
     filmtoolz: "https://casting.filmtoolz.ru/4057285/"
   },
   {
-    name: "Юрий Могила",
-    gender: "мужской",
-    age: 40,
-    city: "Москва",
-    photo: "https://trailers.filmtoolz.ru/images/photos_people/hq/1129267.jpg",
-    education: "ГИТИС",
-    hairColor: "Русый",
-    hairLength: "Короткие",
-    eyeColor: "Серо-зеленый",
-    height: 170,
-    bodyType: "Атлетичное",
-    gallery: [
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1129274.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1129271.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1129270.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1129267.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1129258.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1129256.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1129255.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/988885.jpg"
-    ],
-    video: "https://prefs.filmtoolz.ru/files/u37793/video/3053342/3053342_hd720p.mp4",
-    filmtoolz: "https://casting.filmtoolz.ru/3132479/"
-  },
-  {
     name: "Аркадий Макаров",
     gender: "мужской",
     age: 39,
@@ -417,36 +301,11 @@ window.FACES_DATA = [
     video: "https://prefs.filmtoolz.ru/files/u62956/video/2577883/2577883_hd720p.mp4",
     filmtoolz: "https://casting.filmtoolz.ru/3341790/"
   },
-{
-    name: "Виктория Бриц",
-    gender: "женский",
-    age: 20,
-    city: "Москва",
-    photo: "https://trailers.filmtoolz.ru/images/photos_people/hq/1093651.jpg",
-    education: "МТК им. Л.А. Филатова",
-    hairColor: "Блондин",
-    hairLength: "Длинные",
-    eyeColor: "Голубой",
-    height: 173,
-    bodyType: "Стройное",
-    gallery: [
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1093651.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1093664.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1093663.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1093662.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1093661.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1093658.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1093657.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1093654.jpg"
-    ],
-    video: "https://prefs.filmtoolz.ru/files/u26848/video/2672883/2672883_hd720p.mp4",
-    filmtoolz: "https://casting.filmtoolz.ru/3937923/"
-  },
 
   {
     name: "Богдан Карчевский",
     gender: "мужской",
-    age: 19,
+    age: 20,
     city: "Москва",
     photo: "https://trailers.filmtoolz.ru/images/photos_people/hq/1150891.jpg",
     education: "ВТУ им. М.С. Щепкина",
@@ -468,7 +327,7 @@ window.FACES_DATA = [
   {
     name: "Олег Щербаченко",
     gender: "мужской",
-    age: 20,
+    age: 21,
     city: "Москва",
     photo: "https://trailers.filmtoolz.ru/images/photos_people/hq/1203722.jpg",
     education: "ВГИК",
@@ -508,28 +367,6 @@ window.FACES_DATA = [
     ],
     video: "https://prefs.filmtoolz.ru/files/u55231/video/3436426/3436426_hd720p.mp4",
     filmtoolz: "https://casting.filmtoolz.ru/3955071/"
-  },
-{
-    name: "Александра Тамбовская",
-    gender: "женский",
-    age: 32,
-    city: "Москва",
-    photo: "https://trailers.filmtoolz.ru/images/photos_people/hq/1069483.jpg",
-    education: "ТИ им. Б. Щукина",
-    hairColor: "Блондин",
-    hairLength: "Длинные",
-    eyeColor: "Серо-голубой",
-    height: 165,
-    bodyType: "Стройное",
-    gallery: [
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1069483.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1012478.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1012484.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1012477.jpg",
-      "https://trailers.filmtoolz.ru/images/photos_people/hq/1012476.jpg"
-    ],
-    video: "https://prefs.filmtoolz.ru/files/u81988/video/2436296/2436296_hd720p.mp4",
-    filmtoolz: "https://casting.filmtoolz.ru/4039962/"
   },
   {
     name: "Даня Кольцов (агент)",
