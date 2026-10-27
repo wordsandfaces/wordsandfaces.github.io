@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+  <meta name="referrer" content="no-referrer" />
+  <title>Админка — Слова И Лица</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+
+  <!-- ═══════════ ЭКРАН ВХОДА ═══════════ -->
+  <div id="gate" class="gate">
+    <div class="gate__card">
+      <div class="gate__logo">СЛОВА <i>И</i> ЛИЦА</div>
+      <div class="gate__sub">панель управления</div>
+
+      <label class="field">
+        <span class="field__label">GitHub token</span>
+        <input type="password" id="gateToken" placeholder="github_pat_..." autocomplete="off" spellcheck="false" />
+        <span class="field__hint">Fine-grained token, доступ к репозиторию <b>wordsandfaces.github.io</b>, право <b>Contents: Read and write</b></span>
+      </label>
+
+      <label class="check">
+        <input type="checkbox" id="gateRemember" checked />
+        <span>Запомнить на этом устройстве</span>
+      </label>
+
+      <button class="btn btn--primary btn--block" id="gateBtn">Войти</button>
+
+      <p class="gate__err" id="gateErr"></p>
+      <p class="gate__note">Токен хранится только в этом браузере (localStorage) и уходит исключительно на api.github.com.</p>
+    </div>
+  </div>
+
+  <!-- ═══════════ ПАНЕЛЬ ═══════════ -->
+  <div id="panel" class="panel hidden">
+
+    <header class="topbar">
+      <div class="topbar__brand">
+        СЛОВА <i>И</i> ЛИЦА
+        <span class="topbar__tag">админка</span>
+      </div>
+
+      <div class="topbar__right">
+        <span class="status" id="status">Готово</span>
+        <button class="btn btn--ghost" id="btnRevert" title="Откатить все несохранённые правки">↻ Отменить правки</button>
+        <button class="btn btn--primary" id="btnSave" title="Ctrl+S">💾 Сохранить в GitHub</button>
+        <button class="btn btn--ghost btn--icon" id="btnLogout" title="Выйти">⏻</button>
+      </div>
+    </header>
+
+    <nav class="tabs">
+      <button class="tab active" data-tab="form">Карточки</button>
+      <button class="tab" data-tab="json">faces.js</button>
+      <button class="tab" data-tab="settings">Настройки</button>
+    </nav>
+
+    <main class="work">
+
+      <!-- ─── КАРТОЧКИ ─── -->
+      <section class="pane active" id="pane-form">
+        <aside class="list">
+          <div class="list__tools">
+            <input type="text" id="search" placeholder="Поиск: имя, город…" autocomplete="off" />
+            <button class="btn btn--sm btn--primary" id="btnAdd" title="Добавить актёра">+</button>
+          </div>
+          <div class="list__items" id="listItems"></div>
+          <div class="list__foot" id="listFoot"></div>
+        </aside>
+
+        <div class="editor" id="editor"></div>
+      </section>
+
+      <!-- ─── JSON ─── -->
+      <section class="pane" id="pane-json">
+        <div class="json">
+          <div class="json__tools">
+            <button class="btn btn--sm" id="btnJsonFormat">Форматировать</button>
+            <button class="btn btn--sm btn--primary" id="btnJsonApply">Применить к данным</button>
+            <span class="muted" id="jsonInfo"></span>
+          </div>
+          <textarea id="jsonArea" spellcheck="false" autocomplete="off"></textarea>
+        </div>
+      </section>
+
+      <!-- ─── НАСТРОЙКИ ─── -->
+      <section class="pane" id="pane-settings">
+        <div class="settings">
+          <h2 class="settings__title">Репозиторий</h2>
+
+          <div class="grid-2">
+            <label class="field">
+              <span class="field__label">Owner</span>
+              <input type="text" id="setOwner" spellcheck="false" />
+            </label>
+            <label class="field">
+              <span class="field__label">Repo</span>
+              <input type="text" id="setRepo" spellcheck="false" />
+            </label>
+            <label class="field">
+              <span class="field__label">Branch</span>
+              <input type="text" id="setBranch" spellcheck="false" />
+            </label>
+            <label class="field">
+              <span class="field__label">Путь к файлу</span>
+              <input type="text" id="setPath" spellcheck="false" />
+            </label>
+          </div>
+
+          <div class="settings__row">
+            <button class="btn btn--sm" id="btnSaveSettings">Сохранить настройки</button>
+            <span class="muted" id="settingsInfo"></span>
+          </div>
+
+          <h2 class="settings__title">Резервные копии</h2>
+          <p class="muted">Скачивание и загрузка работают без GitHub — данные остаются локально.</p>
+          <div class="settings__row">
+            <button class="btn btn--sm" id="btnDownload">⬇ Скачать faces.js</button>
+            <button class="btn btn--sm" id="btnUpload">⬆ Загрузить faces.js</button>
+            <input type="file" id="fileInput" accept=".js,.json,.txt" hidden />
+          </div>
+
+          <h2 class="settings__title settings__title--danger">Опасная зона</h2>
+          <div class="settings__row">
+            <button class="btn btn--sm btn--danger" id="btnLogout2">Выйти и забыть токен</button>
+          </div>
+
+          <h2 class="settings__title">Аккаунт</h2>
+          <div class="muted" id="accountInfo">—</div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ═══════════ ТОСТ ═══════════ -->
+  <div class="toast" id="toast"></div>
+
+  <!-- исходные данные сайта -->
+  <script src="faces.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
